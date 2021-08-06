@@ -60,6 +60,7 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env)
     fallbackFeatures && require('postcss-replace-overflow-wrap')({ method: 'copy' }), // safe fallback (postcss-preset-env)
 
+    upcomingFeatures && require('postcss-normalize-display-values'), // safe preprocessor
     fallbackFeatures && require('pixrem'), // safe fallback
 
     fallbackFeatures && require('postcss-redundant-color-vars'), // safe fix fallback for https://bugs.webkit.org/show_bug.cgi?id=185940

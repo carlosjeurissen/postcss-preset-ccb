@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -43,6 +43,7 @@
     "postcss-lab-function": "^3.1.2",
     "postcss-media-minmax": "^5.0.0",
     "postcss-nesting": "^8.0.1",
+    "postcss-normalize-display-values": "^5.0.1",
     "postcss-nth-child-fix": "^2.0.0",
     "postcss-overflow-shorthand": "^2.0.0",
     "postcss-page-break": "^3.0.4",

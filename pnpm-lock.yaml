@@ -26,6 +26,7 @@ specifiers:
   postcss-lab-function: ^3.1.2
   postcss-media-minmax: ^5.0.0
   postcss-nesting: ^8.0.1
+  postcss-normalize-display-values: ^5.0.1
   postcss-nth-child-fix: ^2.0.0
   postcss-overflow-shorthand: ^2.0.0
   postcss-page-break: ^3.0.4
@@ -65,6 +66,7 @@ dependencies:
   postcss-lab-function: 3.1.2
   postcss-media-minmax: 5.0.0_postcss@8.3.6
   postcss-nesting: 8.0.1_postcss@8.3.6
+  postcss-normalize-display-values: 5.0.1_postcss@8.3.6
   postcss-nth-child-fix: 2.0.0
   postcss-overflow-shorthand: 2.0.0
   postcss-page-break: 3.0.4_postcss@8.3.6
@@ -609,7 +611,7 @@ packages:
       has: 1.0.3
       has-symbols: 1.0.2
       internal-slot: 1.0.3
-      is-callable: 1.2.3
+      is-callable: 1.2.4
       is-negative-zero: 2.0.1
       is-regex: 1.1.4
       is-string: 1.0.7
@@ -625,7 +627,7 @@ packages:
     resolution: {integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      is-callable: 1.2.3
+      is-callable: 1.2.4
       is-date-object: 1.0.5
       is-symbol: 1.0.4
     dev: true
@@ -1109,8 +1111,8 @@ packages:
     resolution: {integrity: sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=}
     dev: true
 
-  /is-bigint/1.0.2:
-    resolution: {integrity: sha512-0JV5+SOCQkIdzjBK9buARcV804Ddu7A0Qet6sHi3FimE9ne6m4BGQZfRn+NZiXbBk4F4XmHfDZIipLj9pX8dSA==}
+  /is-bigint/1.0.3:
+    resolution: {integrity: sha512-ZU538ajmYJmzysE5yU4Y7uIrPQ2j704u+hXFiIPQExpqzzUbpe5jCPdTfmz7jXRxZdvjY3KZ3ZNenoXQovX+Dg==}
     dev: true
 
   /is-boolean-object/1.1.2:
@@ -1121,8 +1123,8 @@ packages:
       has-tostringtag: 1.0.0
     dev: true
 
-  /is-callable/1.2.3:
-    resolution: {integrity: sha512-J1DcMe8UYTBSrKezuIUTUwjXsho29693unXM2YhJUTR2txK/eG47bvNa/wipPFmZFgr/N6f1GA66dv0mEyTIyQ==}
+  /is-callable/1.2.4:
+    resolution: {integrity: sha512-nsuwtxZfMX67Oryl9LCQ+upnC0Z0BgpwntpS89m1H/TLF0zNfzfLMV/9Wa/6MZsj0acpEjAO0KF1xT6ZdLl95w==}
     engines: {node: '>= 0.4'}
     dev: true
 
@@ -2656,7 +2658,7 @@ packages:
   /which-boxed-primitive/1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}
     dependencies:
-      is-bigint: 1.0.2
+      is-bigint: 1.0.3
       is-boolean-object: 1.1.2
       is-number-object: 1.0.6
       is-string: 1.0.7

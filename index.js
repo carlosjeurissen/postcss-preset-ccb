@@ -27,7 +27,7 @@ function getPluginList (options) {
   const preserveUnlessMinify = !minifyCss;
 
   const postcssPlugins = [
-    sassFeatures && require('postcss-sass'),
+    sassFeatures && require('postcss-sass')(),
 
     moreFeatures && require('postcss-import'), // non-standard preprocessor
     moreFeatures && require('postcss-input-style'), // non-standard preprocessor

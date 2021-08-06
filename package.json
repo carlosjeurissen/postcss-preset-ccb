@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.3.1",
+    "cssnano": "^5.0.7",
     "pixrem": "^5.0.0",
     "postcss": "^8.3.6",
     "postcss-calc": "^8.0.0",

@@ -7,11 +7,9 @@ function getPluginList (options) {
   const upcomingFeatures = options.upcoming !== false;
   const upnextFeatures = Boolean(options.next);
   const moreFeatures = Boolean(options.more);
-  const sassFeatures = Boolean(options.sass);
   const fallbackUnshipped = fallbackFeatures || upnextFeatures;
 
   /* definitions
-    sass:     Process css with sass before anything else
     fallback: Features already supported in Chrome and Firefox
               yet need fallback in older and/or other browsers
     upcoming: Features implemented in future versions and need
@@ -27,8 +25,6 @@ function getPluginList (options) {
   const preserveUnlessMinify = !minifyCss;
 
   const postcssPlugins = [
-    sassFeatures && require('postcss-sass')(),
-
     moreFeatures && require('postcss-import'), // non-standard preprocessor
     moreFeatures && require('postcss-input-style'), // non-standard preprocessor
 

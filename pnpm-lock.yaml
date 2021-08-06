@@ -34,7 +34,6 @@ specifiers:
   postcss-pseudo-class-any-link: ^6.0.0
   postcss-redundant-color-vars: ^1.0.1
   postcss-replace-overflow-wrap: ^4.0.0
-  postcss-sass: ^0.5.0
   postcss-selector-matches: ^4.0.0
   postcss-selector-not: ^5.0.0
   postcss-will-change: ^4.0.1
@@ -74,7 +73,6 @@ dependencies:
   postcss-pseudo-class-any-link: 6.0.0
   postcss-redundant-color-vars: 1.0.1
   postcss-replace-overflow-wrap: 4.0.0_postcss@8.3.6
-  postcss-sass: 0.5.0
   postcss-selector-matches: 4.0.0
   postcss-selector-not: 5.0.0_postcss@8.3.6
   postcss-will-change: 4.0.1_postcss@8.3.6
@@ -1000,14 +998,6 @@ packages:
       type-fest: 0.20.2
     dev: true
 
-  /gonzales-pe/4.3.0:
-    resolution: {integrity: sha512-otgSPpUmdWJ43VXyiNgEYE4luzHCL2pz4wQ0OnDluC6Eg4Ko3Vexy/SrSynglw/eR+OhkzmqFCZa/OFa/RgAOQ==}
-    engines: {node: '>=0.6.0'}
-    hasBin: true
-    dependencies:
-      minimist: 1.2.5
-    dev: false
-
   /graceful-fs/4.2.8:
     resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
     dev: true
@@ -1370,6 +1360,7 @@ packages:
 
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
+    dev: true
 
   /ms/2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
@@ -2118,14 +2109,6 @@ packages:
     peerDependencies:
       postcss: ^8.0.3
     dependencies:
-      postcss: 8.3.6
-    dev: false
-
-  /postcss-sass/0.5.0:
-    resolution: {integrity: sha512-qtu8awh1NMF3o9j/x9j3EZnd+BlF66X6NZYl12BdKoG2Z4hmydOt/dZj2Nq+g0kfk2pQy3jeYFBmvG9DBwynGQ==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      gonzales-pe: 4.3.0
       postcss: 8.3.6
     dev: false
 

@@ -2,31 +2,17 @@
 'use strict';
 
 function getPluginList (options) {
-  const dirFeatures = Boolean(options.dir);
   const fallbackFeatures = options.fallback !== false;
   const upcomingFeatures = options.upcoming !== false;
   const upnextFeatures = Boolean(options.next);
-  const moreFeatures = Boolean(options.more);
   const fallbackUnshipped = fallbackFeatures || upnextFeatures;
-
-  /* definitions
-    fallback: Features already supported in Chrome and Firefox
-              yet need fallback in older and/or other browsers
-    upcoming: Features implemented in future versions and need
-              fallback for current and older browsers
-    next:     Features talked about in future standards and
-              not yet implemented in any browsers
-    more:     Features which are not part of any standard and
-              are there just for the convenience of the dev
-
-  */
 
   const minifyCss = options.minify;
   const preserveUnlessMinify = !minifyCss;
 
   const postcssPlugins = [
-    moreFeatures && require('postcss-import'), // non-standard preprocessor
-    moreFeatures && require('postcss-input-style'), // non-standard preprocessor
+    Boolean(options.resolveImports) && require('postcss-import'), // non-standard preprocessor
+    Boolean(options.inputRange) && require('postcss-input-range'), // non-standard preprocessor
 
     upnextFeatures && require('postcss-custom-media')({ preserve: false }), // safe preprocessor (postcss-preset-env)
 
@@ -47,8 +33,8 @@ function getPluginList (options) {
 
     fallbackFeatures && require('postcss-selector-not').default, // safe preprocessor, future-revision (postcss-preset-env)
 
-    dirFeatures && fallbackFeatures && require('postcss-logical'), // tricky preprocessor (postcss-preset-env)
-    dirFeatures && upcomingFeatures && require('postcss-dir-pseudo-class'), // tricky preprocessor (postcss-preset-env)
+    Boolean(options.logicalDir) && fallbackFeatures && require('postcss-logical'), // tricky preprocessor (postcss-preset-env)
+    Boolean(options.logicalDir) && upcomingFeatures && require('postcss-dir-pseudo-class'), // tricky preprocessor (postcss-preset-env)
 
     fallbackFeatures && require('postcss-color-functional-notation')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
     fallbackUnshipped && require('postcss-color-gray'), // safe preprocessor, don't use (postcss-preset-env)

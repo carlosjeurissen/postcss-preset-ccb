@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -39,7 +39,7 @@
     "postcss-font-variant": "^5.0.0",
     "postcss-gap-properties": "^2.0.0",
     "postcss-import": "^14.0.2",
-    "postcss-input-style": "^1.0.0",
+    "postcss-input-range": "^4.0.0",
     "postcss-lab-function": "^3.1.2",
     "postcss-media-minmax": "^5.0.0",
     "postcss-nesting": "^8.0.1",

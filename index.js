@@ -8,7 +8,7 @@ function getPluginList (options) {
   const fallbackUnshipped = fallbackFeatures || upnextFeatures;
 
   const minifyCss = options.minify;
-  const purgeCss = options.purge;
+  const purgeCss = Boolean(options.purge);
   const preserveUnlessMinify = !minifyCss;
 
   const postcssPlugins = [
@@ -70,9 +70,7 @@ function getPluginList (options) {
       ]
     }),
 
-    minifyCss && purgeCss && require('@fullhuman/postcss-purgecss')({
-      content: ['/src/**/*.html', '/src/**/*.js']
-    }),
+    minifyCss && purgeCss && require('@fullhuman/postcss-purgecss')(options.purge),
 
     fallbackFeatures && require('postcss-nth-child-fix') // safe fix for android 4.1 and 4.2 bug
   ];

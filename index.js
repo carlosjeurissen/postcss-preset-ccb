@@ -11,6 +11,11 @@ function getPluginList (options) {
   const purgeCss = Boolean(options.purge);
   const preserveUnlessMinify = !minifyCss;
 
+  let sourceDir = options.source || '';
+  if (sourceDir.endsWith('/')) {
+    sourceDir = sourceDir.slice(0, -1);
+  }
+
   const postcssPlugins = [
     Boolean(options.resolveImports) && require('postcss-import'), // non-standard preprocessor
     Boolean(options.inputRange) && require('postcss-input-range'), // non-standard preprocessor
@@ -70,7 +75,36 @@ function getPluginList (options) {
       ]
     }),
 
-    minifyCss && purgeCss && require('@fullhuman/postcss-purgecss')(options.purge),
+    minifyCss && purgeCss && require('@fullhuman/postcss-purgecss')({
+      content: [
+        sourceDir + '/**/*.js',
+        sourceDir + '/**/*.html'
+      ],
+      safelist: {
+        deep: [
+          /^class$/,
+          /^dir$/,
+          /^draggable$/,
+          /^hidden$/,
+          /^open$/,
+          /^required$/,
+          /^role$/,
+          /^tabindex$/,
+          /^data-/,
+          /^aria-/
+        ]
+      },
+      extractors: [
+        {
+          extractor: function (source) {
+            return [
+              ...source.split(/[.'"; ]/g)
+            ];
+          },
+          extensions: ['js']
+        }
+      ]
+    }),
 
     fallbackFeatures && require('postcss-nth-child-fix') // safe fix for android 4.1 and 4.2 bug
   ];

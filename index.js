@@ -8,12 +8,33 @@ function getPluginList (options) {
   const fallbackUnshipped = fallbackFeatures || upnextFeatures;
 
   const minifyCss = options.minify;
-  const purgeCss = Boolean(options.purge);
   const preserveUnlessMinify = !minifyCss;
 
   let sourceDir = options.source || '';
   if (sourceDir.endsWith('/')) {
     sourceDir = sourceDir.slice(0, -1);
+  }
+
+  let purgeCssWhitelist = options.purge;
+  const purgeCss = Boolean(purgeCssWhitelist);
+  if (purgeCss) {
+    if (!Array.isArray(purgeCssWhitelist)) {
+      purgeCssWhitelist = [];
+    }
+    purgeCssWhitelist.push(
+      /^class$/,
+      /^dir$/,
+      /^disabled$/,
+      /^draggable$/,
+      /^hidden$/,
+      /^open$/,
+      /^required$/,
+      /^role$/,
+      /^tabindex$/,
+      /^data-/,
+      /^aria-/,
+      /webkit-scrollbar/
+    );
   }
 
   const postcssPlugins = [
@@ -81,19 +102,7 @@ function getPluginList (options) {
         sourceDir + '/**/*.html'
       ],
       safelist: {
-        deep: [
-          /^class$/,
-          /^dir$/,
-          /^draggable$/,
-          /^hidden$/,
-          /^open$/,
-          /^required$/,
-          /^role$/,
-          /^tabindex$/,
-          /^data-/,
-          /^aria-/,
-          /webkit-scrollbar/
-        ]
+        deep: purgeCssWhitelist
       },
       extractors: [
         {

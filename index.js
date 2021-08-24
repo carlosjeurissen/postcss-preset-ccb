@@ -91,7 +91,9 @@ function getPluginList (options) {
           /^role$/,
           /^tabindex$/,
           /^data-/,
-          /^aria-/
+          /^aria-/,
+          /^webkit-scrollbar/,
+          /^-webkit-scrollbar/
         ]
       },
       extractors: [

@@ -14,7 +14,7 @@ specifiers:
   postcss-color-mod-function: ^3.0.3
   postcss-color-rebeccapurple: ^7.0.0
   postcss-custom-media: ^8.0.0
-  postcss-custom-properties: ^12.0.0
+  postcss-custom-properties: ^11.0.0
   postcss-custom-selectors: ^6.0.0
   postcss-double-position-gradients: ^3.0.0
   postcss-flexbugs-fixes: ^5.0.2
@@ -55,7 +55,7 @@ dependencies:
   postcss-color-mod-function: 3.0.3
   postcss-color-rebeccapurple: 7.0.0_postcss@8.3.8
   postcss-custom-media: 8.0.0_postcss@8.3.8
-  postcss-custom-properties: 12.0.0_postcss@8.3.8
+  postcss-custom-properties: 11.0.0_postcss@8.3.8
   postcss-custom-selectors: 6.0.0_postcss@8.3.8
   postcss-double-position-gradients: 3.0.0_postcss@8.3.8
   postcss-flexbugs-fixes: 5.0.2_postcss@8.3.8
@@ -1703,14 +1703,14 @@ packages:
       postcss: 8.3.8
     dev: false
 
-  /postcss-custom-properties/12.0.0_postcss@8.3.8:
-    resolution: {integrity: sha512-eAyX3rMjZKxdne6tWKjkWbNWfw6bbv4xTsrjNJ7C3uGDODrzbQXR+ueshRkw7Lhlhc3qyTmYH/sFfD0AbhgdSQ==}
-    engines: {node: '>=12'}
+  /postcss-custom-properties/11.0.0_postcss@8.3.8:
+    resolution: {integrity: sha512-Fhnx/QLt+CTt23A/KKVx1anZD9nmVpOxKCKv5owWacMoOsBXFhMAD6SZYbmPMH4nHdIeMUnWOvLZnlY4niS0sA==}
+    engines: {node: '>=10.0.0'}
     peerDependencies:
-      postcss: ^8.3
+      postcss: ^8.1.0
     dependencies:
       postcss: 8.3.8
-      postcss-values-parser: 6.0.0_postcss@8.3.8
+      postcss-values-parser: 4.0.0
     dev: false
 
   /postcss-custom-selectors/6.0.0_postcss@8.3.8:
@@ -2198,6 +2198,15 @@ packages:
       flatten: 1.0.3
       indexes-of: 1.0.1
       uniq: 1.0.1
+    dev: false
+
+  /postcss-values-parser/4.0.0:
+    resolution: {integrity: sha512-R9x2D87FcbhwXUmoCXJR85M1BLII5suXRuXibGYyBJ7lVDEpRIdKZh4+8q5S+/+A4m0IoG1U5tFw39asyhX/Hw==}
+    engines: {node: '>=10'}
+    dependencies:
+      color-name: 1.1.4
+      is-url-superb: 4.0.0
+      postcss: 7.0.38
     dev: false
 
   /postcss-values-parser/6.0.0_postcss@8.3.8:

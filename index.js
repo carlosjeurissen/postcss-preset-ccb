@@ -88,6 +88,7 @@ function getPluginList (options) {
     minifyCss && require('cssnano')({
       preset: [
         'default', {
+          discardComments: false,
           autoprefixer: true,
           cssDeclarationSorter: false,
           svgo: false,
@@ -112,6 +113,17 @@ function getPluginList (options) {
             ];
           },
           extensions: ['js']
+        }
+      ]
+    }),
+
+    minifyCss && require('cssnano')({
+      preset: [
+        'default', {
+          autoprefixer: true,
+          cssDeclarationSorter: false,
+          svgo: false,
+          zindex: false
         }
       ]
     }),

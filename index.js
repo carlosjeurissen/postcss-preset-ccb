@@ -105,6 +105,7 @@ function getPluginList (options) {
       safelist: {
         deep: purgeCssWhitelist
       },
+      rejected: true,
       extractors: [
         {
           extractor: function (source) {

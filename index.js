@@ -37,6 +37,31 @@ function getPluginList (options) {
     );
   }
 
+  /* todo
+    https://github.com/maximkoretskiy/postcss-initial
+    https://github.com/polemius/postcss-clamp
+    https://github.com/Semigradsky/postcss-attribute-case-insensitive
+    https://github.com/JLHwung/postcss-font-family-fangsong
+    https://github.com/JLHwung/postcss-ic-unit
+    https://github.com/mrcgrtz/postcss-opacity-percentage
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-ic-unit
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-function
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-hwb-function
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-image-set-function
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-is-pseudo-class
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-oklab-function
+  */
+
+  /* potentials, requiring js
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/css-blank-pseudo
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/css-has-pseudo
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-visible
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-within
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/css-prefers-color-scheme
+    https://www.npmjs.com/package/container-query-polyfill
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-env-function
+  */
+
   const postcssPlugins = [
     Boolean(options.resolveImports) && require('postcss-import'), // non-standard preprocessor
     Boolean(options.inputRange) && require('postcss-input-range'), // non-standard preprocessor

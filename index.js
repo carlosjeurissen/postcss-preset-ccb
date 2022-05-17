@@ -104,6 +104,7 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-redundant-color-vars'), // safe fix fallback for https://bugs.webkit.org/show_bug.cgi?id=185940
     fallbackFeatures && require('postcss-clip-path-polyfill'), // safe fallback
     fallbackFeatures && require('postcss-calc')({ preserve: true }), // safe fallback
+    fallbackFeatures && require('postcss-safe-area'),
     fallbackFeatures && require('postcss-flexbugs-fixes'), // safe fix preprocessor
     upcomingFeatures && require('postcss-font-format-keywords'), // safe preprocessor
     fallbackFeatures && require('postcss-will-change'), // safe fallback

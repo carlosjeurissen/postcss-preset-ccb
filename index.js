@@ -83,7 +83,7 @@ function getPluginList (options) {
 
     fallbackFeatures && require('postcss-pseudo-any'), // preprocessor, future-revision (postcss-preset-env)
 
-    fallbackFeatures && require('postcss-selector-not').default, // safe preprocessor, future-revision (postcss-preset-env)
+    fallbackFeatures && require('postcss-selector-not'), // safe preprocessor, future-revision (postcss-preset-env)
 
     Boolean(options.logicalDir) && fallbackFeatures && require('postcss-logical'), // tricky preprocessor (postcss-preset-env)
     Boolean(options.logicalDir) && upcomingFeatures && require('postcss-dir-pseudo-class'), // tricky preprocessor (postcss-preset-env)

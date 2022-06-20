@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.0.28",
+  "version": "0.1.0",
   "description": "Collection of postcss plugins for improved compatibility and handling of future syntaxes.",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -17,13 +17,24 @@
   "bin": {
     "postcss-preset-ccb": "index.js"
   },
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch"
+  },
   "dependencies": {
+    "@csstools/postcss-color-function": "^1.1.0",
+    "@csstools/postcss-hwb-function": "^1.0.1",
+    "@csstools/postcss-normalize-display-values": "^1.0.0",
+    "@csstools/postcss-oklab-function": "^1.1.0",
+    "@csstools/postcss-stepped-value-functions": "^1.0.0",
+    "@csstools/postcss-trigonometric-functions": "^1.0.1",
     "@fullhuman/postcss-purgecss": "^4.1.3",
     "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.12",
     "pixrem": "^5.0.0",
     "postcss": "^8.4.14",
     "postcss-calc": "^8.2.4",
+    "postcss-clamp": "^4.1.0",
     "postcss-clip-path-polyfill": "^1.1.0",
     "postcss-color-functional-notation": "^4.2.3",
     "postcss-color-gray": "^5.0.0",
@@ -35,17 +46,20 @@
     "postcss-custom-selectors": "^6.0.3",
     "postcss-double-position-gradients": "^3.1.1",
     "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-font-family-fangsong": "^2.0.0",
     "postcss-font-family-system-ui": "^5.0.0",
     "postcss-font-format-keywords": "^3.0.2",
     "postcss-font-variant": "^5.0.0",
     "postcss-gap-properties": "^3.0.3",
+    "postcss-ic-unit": "^2.0.0",
     "postcss-import": "^14.1.0",
     "postcss-input-range": "^5.0.0",
     "postcss-lab-function": "^4.2.0",
     "postcss-media-minmax": "^5.0.0",
     "postcss-nesting": "^10.1.8",
-    "postcss-normalize-display-values": "^5.1.0",
     "postcss-nth-child-fix": "^2.0.0",
+    "postcss-opacity-percentage": "^1.1.2",
+    "postcss-overflow-clip": "^0.0.0",
     "postcss-overflow-shorthand": "^3.0.3",
     "postcss-page-break": "^3.0.4",
     "postcss-place": "^7.0.4",
@@ -59,7 +73,30 @@
     "postcss-will-change": "^4.0.1"
   },
   "devDependencies": {
-    "semistandard": "~16.0.1"
+    "eslint": "^8.18.0",
+    "eslint-config-ccb": "^0.0.15",
+    "jest": "^28.1.1",
+    "postcss-discard-comments": "^5.1.2",
+    "postcss-prettify": "^0.3.4"
+  },
+  "browserslist": [
+    "> 0.2%",
+    "not dead",
+    "Firefox ESR",
+    "IE >= 11",
+    "unreleased firefox versions",
+    "unreleased safari versions",
+    "unreleased chrome versions",
+    "unreleased opera versions",
+    "unreleased edge versions",
+    "safari 11"
+  ],
+  "eslintConfig": {
+    "extends": "ccb",
+    "env": {
+      "es2022": true,
+      "node": true
+    }
   },
   "engines": {
     "node": ">=8.0.0"

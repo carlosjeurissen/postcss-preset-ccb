@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 'use strict';
 
 function getPluginList (options) {
@@ -10,6 +11,8 @@ function getPluginList (options) {
 
   const minifyCss = options.minify;
   const preserveUnlessMinify = !minifyCss;
+  const preserveOnlyForAdditionalClarity = preserveUnlessMinify && false;
+  const preserveOnceImplementedAnywhere = false;
 
   let sourceDir = options.source || '';
   if (sourceDir.endsWith('/')) {
@@ -34,24 +37,17 @@ function getPluginList (options) {
       /^tabindex$/,
       /^data-/,
       /^aria-/,
-      /webkit-scrollbar/
+      /webkit-scrollbar/,
     );
   }
 
   /* todo
-    https://github.com/Hypnosphi/postcss-overflow-clip
-    https://github.com/maximkoretskiy/postcss-initial
-    https://github.com/polemius/postcss-clamp
-    https://github.com/Semigradsky/postcss-attribute-case-insensitive
-    https://github.com/JLHwung/postcss-font-family-fangsong
-    https://github.com/JLHwung/postcss-ic-unit
-    https://github.com/mrcgrtz/postcss-opacity-percentage
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-ic-unit
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-function
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-hwb-function
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-image-set-function
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-is-pseudo-class
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-oklab-function
+    https://github.com/maximkoretskiy/postcss-initial, todo awaiting https://github.com/maximkoretskiy/postcss-initial/issues/49
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-attribute-case-insensitive
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-cascade-layers
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-env-function
+
+    notComplyingStylelintCcb && https://github.com/mrcgrtz/postcss-opacity-percentage
   */
 
   /* potentials, requiring js
@@ -68,48 +64,64 @@ function getPluginList (options) {
     Boolean(options.resolveImports) && require('postcss-import'), // non-standard preprocessor
     Boolean(options.inputRange) && require('postcss-input-range'), // non-standard preprocessor
 
-    upnextFeatures && require('postcss-custom-media')({ preserve: false }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && upnextFeatures && require('postcss-custom-media')({ preserve: false }), // safe preprocessor (postcss-preset-env)
 
-    fallbackFeatures && require('postcss-custom-properties')({ preserve: true }), // safe fallback (postcss-preset-env)
+    fallbackFeatures && require('postcss-custom-properties')({ preserve: true }), // safe fallback (postcss-preset-env) todo incorrect fallback
     fallbackFeatures && require('postcss-double-position-gradients')({ preserve: true }), // safe fallback (postcss-preset-env)
-    upcomingFeatures && require('postcss-font-variant'), // safe fallback (postcss-preset-env)
-    upcomingFeatures && require('postcss-font-family-system-ui')({ preserve: true }), // safe fallback (postcss-preset-env)
-    fallbackFeatures && require('postcss-gap-properties')({ preserve: true }), // safe fallback (postcss-preset-env)
-    upnextFeatures && require('postcss-media-minmax'), // safe preprocessor (postcss-preset-env)
-    upnextFeatures && require('postcss-nesting'), // safe preprocessor (postcss-preset-env)
-    upnextFeatures && require('postcss-custom-selectors')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
+    // fallbackFeatures && require('postcss-image-set-function')({ preserve: preserveUnlessMinify }), prefer non-image-set fallback, todo
 
-    upcomingFeatures && require('postcss-page-break'), // safe fallback (postcss-preset-env)
+    fallbackFeatures && require('postcss-gap-properties')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env), future-revisit 2022-06-20
+    upcomingFeatures && require('postcss-media-minmax'), // safe preprocessor (postcss-preset-env)
+    upnextFeatures && require('postcss-nesting'), // safe preprocessor (postcss-preset-env)
+    upnextFeatures && require('postcss-custom-selectors')({ preserve: preserveOnceImplementedAnywhere }), // safe preprocessor (postcss-preset-env) future-revisit 2022-06-20
+    fallbackFeatures && require('postcss-page-break'), // safe fallback (postcss-preset-env)
     fallbackFeatures && require('postcss-place')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
     fallbackFeatures && require('postcss-pseudo-class-any-link')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
 
-    fallbackFeatures && require('postcss-pseudo-any'), // preprocessor, future-revision (postcss-preset-env)
+    fallbackFeatures && require('postcss-pseudo-any')({ matchModern: true, matchPrefixed: true }), // specificity-unsafe preprocessor, future-revisit (postcss-preset-env), alternative: https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-is-pseudo-class
 
-    fallbackFeatures && require('postcss-selector-not'), // safe preprocessor, future-revision (postcss-preset-env)
+    fallbackFeatures && require('postcss-selector-not'), // specificity-unsafe preprocessor, future-revisit (postcss-preset-env)
 
     Boolean(options.logicalDir) && fallbackFeatures && require('postcss-logical'), // tricky preprocessor (postcss-preset-env)
     Boolean(options.logicalDir) && upcomingFeatures && require('postcss-dir-pseudo-class'), // tricky preprocessor (postcss-preset-env)
 
-    fallbackFeatures && require('postcss-color-functional-notation')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
-    notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-gray'), // safe preprocessor, don't use (postcss-preset-env)
-    notComplyingStylelintCcb && fallbackFeatures && require('postcss-color-hex-alpha')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
-    upnextFeatures && require('postcss-lab-function')({ preserve: false }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackFeatures && require('postcss-color-functional-notation')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-gray')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor, don't use (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackFeatures && require('postcss-color-hex-alpha')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && upcomingFeatures && require('postcss-lab-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && upcomingFeatures && require('@csstools/postcss-oklab-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
     notComplyingStylelintCcb && fallbackFeatures && require('postcss-color-rebeccapurple')({ preserve: false }), // safe preprocessor (postcss-preset-env)
-    fallbackUnshipped && require('postcss-color-mod-function'), // safe preprocessor, don't use (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-mod-function')({}), // safe preprocessor, don't use (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-color-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && require('@csstools/postcss-hwb-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
+    fallbackFeatures && require('postcss-opacity-percentage')({ preserve: preserveOnlyForAdditionalClarity}),
 
+    // fallbackFeatures && require('postcss-overflow-clip')({ add: false }), todo awaiting https://github.com/Hypnosphi/postcss-overflow-clip/issues/1
     fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env)
     fallbackFeatures && require('postcss-replace-overflow-wrap')({ method: 'copy' }), // safe fallback (postcss-preset-env)
+    fallbackFeatures && require('postcss-clamp')({ precalculate: minifyCss }),
 
-    upcomingFeatures && require('postcss-normalize-display-values'), // safe preprocessor
+    upcomingFeatures && require('@csstools/postcss-normalize-display-values'), // safe preprocessor, alternative: postcss-normalize-display-values
+
     fallbackFeatures && require('pixrem'), // safe fallback
+    notComplyingStylelintCcb && upcomingFeatures && require('postcss-ic-unit')({ preserve: true }), // safe fallback, alternative: @csstools/postcss-ic-unit
 
     fallbackFeatures && require('postcss-redundant-color-vars'), // safe fix fallback for https://bugs.webkit.org/show_bug.cgi?id=185940
     fallbackFeatures && require('postcss-clip-path-polyfill'), // safe fallback
-    fallbackFeatures && require('postcss-calc')({ preserve: true }), // safe fallback
+    fallbackFeatures && require('postcss-calc')({ preserve: true, precision: 10 }), // safe fallback
     fallbackFeatures && require('postcss-safe-area'),
     fallbackFeatures && require('postcss-flexbugs-fixes'), // safe fix preprocessor
-    upcomingFeatures && require('postcss-font-format-keywords'), // safe preprocessor
     fallbackFeatures && require('postcss-will-change'), // safe fallback
+
+    upcomingFeatures && require('@csstools/postcss-stepped-value-functions')({ preserve: preserveOnceImplementedAnywhere}), // future-revisit 2022-06-20
+    upcomingFeatures && require('@csstools/postcss-trigonometric-functions')({ preserve: preserveOnceImplementedAnywhere}), // future-revisit 2022-06-20
+
+    upcomingFeatures && require('postcss-font-variant'), // safe fallback (postcss-preset-env)
+    upcomingFeatures && require('postcss-font-family-system-ui')({ preserve: true }), // safe fallback (postcss-preset-env) // browserlist
+    upcomingFeatures && require('postcss-font-family-fangsong')({ preserve: true }),
+    upcomingFeatures && require('postcss-font-format-keywords')({ singleQuote: false }), // safe preprocessor
+
+    fallbackFeatures && require('postcss-nth-child-fix'), // safe fix for android 4.1 and 4.2 bug
 
     fallbackFeatures && require('autoprefixer'), // safe fallback
 
@@ -120,30 +132,30 @@ function getPluginList (options) {
           autoprefixer: true,
           cssDeclarationSorter: false,
           svgo: false,
-          zindex: false
-        }
-      ]
+          zindex: false,
+        },
+      ],
     }),
 
     minifyCss && purgeCss && require('@fullhuman/postcss-purgecss')({
       content: [
         sourceDir + '/**/*.js',
-        sourceDir + '/**/*.html'
+        sourceDir + '/**/*.html',
       ],
       safelist: {
-        deep: purgeCssWhitelist
+        deep: purgeCssWhitelist,
       },
       rejected: true,
       extractors: [
         {
           extractor: function (source) {
             return [
-              ...source.split(/[.'"; ]/g)
+              ...source.split(/[ "'.;]/g),
             ];
           },
-          extensions: ['js']
-        }
-      ]
+          extensions: ['js'],
+        },
+      ],
     }),
 
     minifyCss && require('cssnano')({
@@ -152,17 +164,13 @@ function getPluginList (options) {
           autoprefixer: true,
           cssDeclarationSorter: false,
           svgo: false,
-          zindex: false
-        }
-      ]
+          zindex: false,
+        },
+      ],
     }),
-
-    fallbackFeatures && require('postcss-nth-child-fix') // safe fix for android 4.1 and 4.2 bug
   ];
 
-  return postcssPlugins.filter((item) => {
-    return item !== false;
-  });
+  return postcssPlugins.filter((item) => item !== false);
 }
 
 exports.getPluginList = getPluginList;

@@ -17,3 +17,6 @@ node_modules
 # Mac and windows files
 .DS_Store
 .tmp
+
+# Actual test output
+/__tests__/actual-*

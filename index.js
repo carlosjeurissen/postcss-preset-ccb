@@ -6,6 +6,7 @@ function getPluginList (options) {
   const upcomingFeatures = options.upcoming !== false;
   const upnextFeatures = Boolean(options.next);
   const fallbackUnshipped = fallbackFeatures || upnextFeatures;
+  const notComplyingStylelintCcb = !options.ccbCompliant;
 
   const minifyCss = options.minify;
   const preserveUnlessMinify = !minifyCss;
@@ -38,6 +39,7 @@ function getPluginList (options) {
   }
 
   /* todo
+    https://github.com/Hypnosphi/postcss-overflow-clip
     https://github.com/maximkoretskiy/postcss-initial
     https://github.com/polemius/postcss-clamp
     https://github.com/Semigradsky/postcss-attribute-case-insensitive
@@ -89,10 +91,10 @@ function getPluginList (options) {
     Boolean(options.logicalDir) && upcomingFeatures && require('postcss-dir-pseudo-class'), // tricky preprocessor (postcss-preset-env)
 
     fallbackFeatures && require('postcss-color-functional-notation')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
-    fallbackUnshipped && require('postcss-color-gray'), // safe preprocessor, don't use (postcss-preset-env)
-    fallbackFeatures && require('postcss-color-hex-alpha')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-gray'), // safe preprocessor, don't use (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackFeatures && require('postcss-color-hex-alpha')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
     upnextFeatures && require('postcss-lab-function')({ preserve: false }), // safe preprocessor (postcss-preset-env)
-    fallbackFeatures && require('postcss-color-rebeccapurple')({ preserve: false }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackFeatures && require('postcss-color-rebeccapurple')({ preserve: false }), // safe preprocessor (postcss-preset-env)
     fallbackUnshipped && require('postcss-color-mod-function'), // safe preprocessor, don't use (postcss-preset-env)
 
     fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env)

@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Collection of postcss plugins for improved compatibility and handling of future syntaxes.",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -56,7 +56,7 @@
     "postcss-input-range": "^5.0.0",
     "postcss-lab-function": "^4.2.0",
     "postcss-media-minmax": "^5.0.0",
-    "postcss-nesting": "^10.1.9",
+    "postcss-nesting": "^10.1.10",
     "postcss-nth-child-fix": "^2.0.0",
     "postcss-opacity-percentage": "^1.1.2",
     "postcss-overflow-clip": "^0.0.0",
@@ -74,8 +74,8 @@
   },
   "devDependencies": {
     "eslint": "^8.18.0",
-    "eslint-config-ccb": "^0.0.15",
-    "jest": "^28.1.1",
+    "eslint-config-ccb": "^0.1.0",
+    "jest": "^28.1.2",
     "postcss-discard-comments": "^5.1.2",
     "postcss-prettify": "^0.3.4"
   },

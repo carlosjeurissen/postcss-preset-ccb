@@ -154,7 +154,7 @@ function getPluginList (options) {
       rejected: true,
       extractors: [
         {
-          extractor: function (source) {
+          extractor: function extractor (source) {
             return [
               ...source.split(/[ "'.;]/g),
             ];

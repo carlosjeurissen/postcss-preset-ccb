@@ -1,3 +1,14 @@
+/* eslint-disable
+  global-require,
+  no-autofix/strict,
+  unicorn/prefer-module,
+*/
+/* global
+  describe,
+  expect,
+  test,
+*/
+
 'use strict';
 
 const fs = require('node:fs');
@@ -20,14 +31,13 @@ describe('The output matches expectations', () => {
     expect(css).toBe(validOutputCss);
 
     return postcss([
-    require('postcss-prettify'),
-    require('postcss-discard-comments'),
-  ]).process(css, {
-    from: undefined,
-  }).then(({ css }) => {
-    fs.writeFileSync('./__tests__/actual-output-no-comments.css', css);
-
-  });
+      require('postcss-prettify'),
+      require('postcss-discard-comments'),
+    ]).process(css, {
+      from: undefined,
+    }).then(({ css }) => {
+      fs.writeFileSync('./__tests__/actual-output-no-comments.css', css);
+    });
   }));
 
   test('minified output', () => postcss(postcssPluginsPreset({

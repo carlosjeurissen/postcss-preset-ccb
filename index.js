@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+/* eslint-disable
+  unicorn/prefer-module,
+  no-autofix/strict,
+  global-require,
+*/
+
 'use strict';
 
 function getPluginList (options) {
@@ -85,7 +91,7 @@ function getPluginList (options) {
     Boolean(options.logicalDir) && fallbackFeatures && require('postcss-logical'), // tricky preprocessor (postcss-preset-env)
     Boolean(options.logicalDir) && upcomingFeatures && require('postcss-dir-pseudo-class'), // tricky preprocessor (postcss-preset-env)
 
-    notComplyingStylelintCcb && fallbackFeatures && require('postcss-color-functional-notation')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor (postcss-preset-env)
+    fallbackFeatures && require('postcss-color-functional-notation')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor (postcss-preset-env)
     notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-gray')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor, don't use (postcss-preset-env)
     notComplyingStylelintCcb && fallbackFeatures && require('postcss-color-hex-alpha')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor (postcss-preset-env)
     notComplyingStylelintCcb && upcomingFeatures && require('postcss-lab-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
@@ -94,7 +100,7 @@ function getPluginList (options) {
     notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-mod-function')({}), // safe preprocessor, don't use (postcss-preset-env)
     notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-color-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
     notComplyingStylelintCcb && require('@csstools/postcss-hwb-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
-    fallbackFeatures && require('postcss-opacity-percentage')({ preserve: preserveOnlyForAdditionalClarity}),
+    fallbackFeatures && require('postcss-opacity-percentage')({ preserve: preserveOnlyForAdditionalClarity }),
 
     // fallbackFeatures && require('postcss-overflow-clip')({ add: false }), todo awaiting https://github.com/Hypnosphi/postcss-overflow-clip/issues/1
     fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env)
@@ -113,8 +119,8 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-flexbugs-fixes'), // safe fix preprocessor
     fallbackFeatures && require('postcss-will-change'), // safe fallback
 
-    upcomingFeatures && require('@csstools/postcss-stepped-value-functions')({ preserve: preserveOnceImplementedAnywhere}), // future-revisit 2022-06-20
-    upcomingFeatures && require('@csstools/postcss-trigonometric-functions')({ preserve: preserveOnceImplementedAnywhere}), // future-revisit 2022-06-20
+    upcomingFeatures && require('@csstools/postcss-stepped-value-functions')({ preserve: preserveOnceImplementedAnywhere }), // future-revisit 2022-06-20
+    upcomingFeatures && require('@csstools/postcss-trigonometric-functions')({ preserve: preserveOnceImplementedAnywhere }), // future-revisit 2022-06-20
 
     upcomingFeatures && require('postcss-font-variant'), // safe fallback (postcss-preset-env)
     upcomingFeatures && require('postcss-font-family-system-ui')({ preserve: true }), // safe fallback (postcss-preset-env) // browserlist

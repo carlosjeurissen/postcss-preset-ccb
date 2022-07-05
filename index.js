@@ -100,7 +100,7 @@ function getPluginList (options) {
     notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-mod-function')({}), // safe preprocessor, don't use (postcss-preset-env)
     notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-color-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
     notComplyingStylelintCcb && require('@csstools/postcss-hwb-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
-    fallbackFeatures && require('postcss-opacity-percentage')({ preserve: preserveOnlyForAdditionalClarity }),
+    notComplyingStylelintCcb && fallbackFeatures && require('postcss-opacity-percentage')({ preserve: preserveOnlyForAdditionalClarity }),
 
     // fallbackFeatures && require('postcss-overflow-clip')({ add: false }), todo awaiting https://github.com/Hypnosphi/postcss-overflow-clip/issues/1
     fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env)

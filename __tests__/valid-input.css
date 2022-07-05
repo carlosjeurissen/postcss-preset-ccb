@@ -346,6 +346,18 @@ h1 {
   z-index: 50;
 }
 
+/* specific-use overflow-wrap */
+.test-overflow-wrap {
+  overflow-wrap: break-word;
+}
+
+/* specific-use alpha-value percentage */
+.test-alpha-value {
+  opacity: 20%;
+  background-color: rgba(128, 130, 132, 20%);
+  color: rgb(12 40 80 / 20%);
+}
+
 /* specific-use mess */
 .test__ten {
   position: relative;

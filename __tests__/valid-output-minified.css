@@ -338,6 +338,17 @@ h1{
   z-index:50;
 }
 
+.test-overflow-wrap{
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+}
+
+.test-alpha-value{
+  opacity:.2;
+  background-color:hsla(210,2%,51%,.2);
+  color:rgba(12,40,80,.2);
+}
+
 .test__ten{
   height:20px;
   outline-offset:2px;

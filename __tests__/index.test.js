@@ -1,12 +1,8 @@
+/* eslint-env node, es2022, jest */
 /* eslint-disable
   global-require,
   no-autofix/strict,
   unicorn/prefer-module,
-*/
-/* global
-  describe,
-  expect,
-  test,
 */
 
 'use strict';

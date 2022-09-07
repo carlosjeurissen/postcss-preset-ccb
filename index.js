@@ -74,7 +74,7 @@ function getPluginList (options) {
 
     fallbackFeatures && require('postcss-custom-properties')({ preserve: true }), // safe fallback (postcss-preset-env) todo incorrect fallback
     fallbackFeatures && require('postcss-double-position-gradients')({ preserve: true }), // safe fallback (postcss-preset-env)
-    // fallbackFeatures && require('postcss-image-set-function')({ preserve: preserveUnlessMinify }), prefer non-image-set fallback, todo
+    notComplyingStylelintCcb && fallbackFeatures && require('postcss-image-set-function')({ preserve: preserveUnlessMinify }),
 
     fallbackFeatures && require('postcss-gap-properties')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env), future-revisit 2022-06-20
     upcomingFeatures && require('postcss-media-minmax'), // safe preprocessor (postcss-preset-env)
@@ -102,8 +102,8 @@ function getPluginList (options) {
     notComplyingStylelintCcb && require('@csstools/postcss-hwb-function')({ preserve: true }), // safe preprocessor (postcss-preset-env)
     fallbackFeatures && require('postcss-opacity-percentage')({ preserve: preserveOnlyForAdditionalClarity }),
 
-    // fallbackFeatures && require('postcss-overflow-clip')({ add: false }), todo awaiting https://github.com/Hypnosphi/postcss-overflow-clip/issues/1
     fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env)
+    fallbackFeatures && require('postcss-overflow-clip')({ add: false }),
     fallbackFeatures && require('postcss-replace-overflow-wrap')({ method: 'copy' }), // safe fallback (postcss-preset-env)
     fallbackFeatures && require('postcss-clamp')({ precalculate: minifyCss }),
 

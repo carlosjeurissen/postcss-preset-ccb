@@ -128,13 +128,34 @@ p{
   display:inline-block;
 }
 
-.foo{
+.overflow-wrap{
   word-wrap:break-word;
   overflow-wrap:break-word;
 }
 
 html{
   overflow-x:hidden;
+  overflow-y:auto;
+}
+
+.overflow-clip{
+  overflow:hidden;
+  overflow:clip;
+}
+
+.overflow-hidden{
+  overflow:hidden;
+}
+
+.overflow-combined-1{
+  overflow-x:hidden;
+  overflow-x:clip;
+  overflow-y:hidden;
+}
+
+.overflow-combined-2{
+  overflow-x:hidden;
+  overflow-x:clip;
   overflow-y:auto;
 }
 
@@ -329,18 +350,24 @@ h1{
   inset-inline-start:8px;
 }
 
-.test{
-  background-image:-webkit-image-set(url(img/test.png) 1x,url(img/test-2x.png) 2x,url(my-img-print.png) 600dpi);
-  background-image:image-set(url(img/test.png) 1x,url(img/test-2x.png) 2x,url(my-img-print.png) 600dpi);
+.image-set{
+  background-image:url(img/test.png);
+}
+
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution: 192dpi){
+  .image-set{
+    background-image:url(img/test-2x.png);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio:6.25),(min-resolution: 600dpi){
+  .image-set{
+    background-image:url(my-img-print.png);
+  }
 }
 
 .test-z-index{
   z-index:50;
-}
-
-.test-overflow-wrap{
-  word-wrap:break-word;
-  overflow-wrap:break-word;
 }
 
 .test-alpha-value{

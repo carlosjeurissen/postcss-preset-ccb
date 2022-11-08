@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Collection of postcss plugins for improved compatibility and handling of future syntaxes.",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -62,7 +62,7 @@
     "postcss-nesting": "^10.2.0",
     "postcss-nth-child-fix": "^2.0.0",
     "postcss-opacity-percentage": "^1.1.2",
-    "postcss-overflow-clip": "^0.2.0",
+    "postcss-overflow-clip": "^0.2.1",
     "postcss-overflow-shorthand": "^3.0.4",
     "postcss-page-break": "^3.0.4",
     "postcss-place": "^7.0.5",

@@ -48,7 +48,7 @@ specifiers:
   postcss-nesting: ^10.2.0
   postcss-nth-child-fix: ^2.0.0
   postcss-opacity-percentage: ^1.1.2
-  postcss-overflow-clip: ^0.2.0
+  postcss-overflow-clip: ^0.2.1
   postcss-overflow-shorthand: ^3.0.4
   postcss-page-break: ^3.0.4
   postcss-place: ^7.0.5
@@ -103,7 +103,7 @@ dependencies:
   postcss-nesting: 10.2.0_postcss@8.4.18
   postcss-nth-child-fix: 2.0.0
   postcss-opacity-percentage: 1.1.2
-  postcss-overflow-clip: 0.2.0_postcss@8.4.18
+  postcss-overflow-clip: 0.2.1_postcss@8.4.18
   postcss-overflow-shorthand: 3.0.4_postcss@8.4.18
   postcss-page-break: 3.0.4_postcss@8.4.18
   postcss-place: 7.0.5_postcss@8.4.18
@@ -4013,8 +4013,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-overflow-clip/0.2.0_postcss@8.4.18:
-    resolution: {integrity: sha512-MHMqI7/7mXF5485bjuwXQaw7OVX6PYFUsJHeUmfpADE8eGigy74NRsJOp3RmDVlZ2tB+8KZahg+nz6gTx95z6Q==}
+  /postcss-overflow-clip/0.2.1_postcss@8.4.18:
+    resolution: {integrity: sha512-45FkuqsoE81DE7Ca0CxGMciCkrP2QzN5rVcC5X4mtuGrqZQ7B+sBdinXUablfYYOvXLlzu75gyLH5GXd7kLN3w==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       postcss: ^8.2.8

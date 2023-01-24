@@ -118,11 +118,13 @@ h1 {
 /* postcss-redundant-color-vars */
 .foo {
   --redundant-border: hsla(var(--primary-color), 0.5);
+  border: 1px solid hsla(var(--primary-color), 0.5);
   border: 1px solid var(--redundant-border);
 }
 
 .bar {
   --redundant-box-shadow: rgb(var(--secondary-color));
+  box-shadow: inset 1px 1px 4px rgb(var(--secondary-color));
   box-shadow: inset 1px 1px 4px var(--redundant-box-shadow);
 }
 
@@ -328,7 +330,15 @@ nav :any-link > span {
 
 /* postcss-custom-selectors */
 
-article h1 + p,article h2 + p,article h3 + p {
+article h1 + p {
+  margin-top: 0;
+}
+
+article h2 + p {
+  margin-top: 0;
+}
+
+article h3 + p {
   margin-top: 0;
 }
 
@@ -368,6 +378,24 @@ table {
   font-variant-numeric: lining-nums;
 }
 
+/* postcss-text-decoration-shorthand */
+.example {
+  text-decoration: underline;
+  -webkit-text-decoration: underline wavy purple;
+          text-decoration: underline wavy purple;
+  text-decoration-thickness: 0.25em;
+  text-decoration-thickness: calc(0.01em * 25);
+  -webkit-text-decoration: wavy underline purple 25%;
+          text-decoration: wavy underline purple 25%;
+}
+
+.example2 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
 /* postcss-custom-properties */
 :root {
   --color: red;
@@ -380,12 +408,13 @@ h1 {
 
 .variable-test1 {
   --test: red;
-  color: green;
+  color: red;
   color: var(--test, green);
 }
 
 .variable-test2 {
   --test2: red;
+  color: red;
   color: var(--test2);
 }
 

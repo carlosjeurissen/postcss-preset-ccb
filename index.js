@@ -51,9 +51,25 @@ function getPluginList (options) {
     https://github.com/maximkoretskiy/postcss-initial, todo awaiting https://github.com/maximkoretskiy/postcss-initial/issues/49
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-attribute-case-insensitive
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-cascade-layers
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-env-function
-
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-float-and-clear
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-resize
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-media-queries-aspect-ratio-number-values
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nested-calc
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-progressive-custom-properties
     notComplyingStylelintCcb && https://github.com/mrcgrtz/postcss-opacity-percentage
+  */
+
+  /* todo easy additions
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-unset-value
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-scope-pseudo-class
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-viewport-units
+  */
+
+  /* general todo
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+
+    autoprefixer should not prefix the above
   */
 
   /* potentials, requiring js
@@ -85,11 +101,14 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-pseudo-class-any-link')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
 
     fallbackFeatures && require('postcss-pseudo-any')({ matchModern: true, matchPrefixed: true }), // specificity-unsafe preprocessor, future-revisit (postcss-preset-env), alternative: https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-is-pseudo-class
+    fallbackFeatures && upnextFeatures && require('@csstools/postcss-is-pseudo-class'), // specificity-unsafe preprocessor, required for postcss-custom-selectors
 
     fallbackFeatures && require('postcss-selector-not'), // specificity-unsafe preprocessor, future-revisit (postcss-preset-env)
 
     Boolean(options.logicalDir) && fallbackFeatures && require('postcss-logical'), // tricky preprocessor (postcss-preset-env)
     Boolean(options.logicalDir) && upcomingFeatures && require('postcss-dir-pseudo-class'), // tricky preprocessor (postcss-preset-env)
+
+    fallbackFeatures && require('@csstools/postcss-text-decoration-shorthand')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
 
     fallbackFeatures && require('postcss-color-functional-notation')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor (postcss-preset-env)
     notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-gray')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor, don't use (postcss-preset-env)
@@ -148,18 +167,19 @@ function getPluginList (options) {
         sourceDir + '/**/*.js',
         sourceDir + '/**/*.html',
       ],
+      rejected: true,
       safelist: {
         deep: purgeCssWhitelist,
       },
-      rejected: true,
+
       extractors: [
         {
-          extractor: function extractor (source) {
-            return [
-              ...source.split(/[ "'.;]/g),
-            ];
-          },
           extensions: ['js'],
+          extractor: function extractor (source) {
+            return (
+              source.split(/[ "'.;]/g)
+            );
+          },
         },
       ],
     }),

@@ -99,6 +99,7 @@ h1{
 
 .bar{
   --redundant-box-shadow:rgb(var(--secondary-color));
+  box-shadow:inset 1px 1px 4px rgb(var(--secondary-color));
   box-shadow:inset 1px 1px 4px var(--redundant-box-shadow);
 }
 
@@ -299,6 +300,20 @@ table{
   font-variant-numeric:lining-nums;
 }
 
+.example{
+  text-decoration:underline;
+  -webkit-text-decoration:underline wavy purple;
+  text-decoration:underline wavy purple;
+  text-decoration-thickness:.25em;
+}
+
+.example2{
+  -webkit-text-decoration:underline;
+  text-decoration:underline;
+  -webkit-text-decoration-style:dotted;
+  text-decoration-style:dotted;
+}
+
 :root{
   --color:red;
 }
@@ -310,12 +325,13 @@ h1{
 
 .variable-test1{
   --test:red;
-  color:green;
+  color:red;
   color:var(--test,green);
 }
 
 .variable-test2{
   --test2:red;
+  color:red;
   color:var(--test2);
 }
 

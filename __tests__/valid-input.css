@@ -292,6 +292,16 @@ table {
   font-variant-numeric: lining-nums;
 }
 
+/* postcss-text-decoration-shorthand */
+.example {
+  text-decoration: wavy underline purple 25%;
+}
+
+.example2 {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
 /* postcss-custom-properties */
 :root {
   --color: red;

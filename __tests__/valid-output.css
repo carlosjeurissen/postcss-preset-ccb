@@ -198,11 +198,20 @@ html {
 }
 
 /* postcss-hwb-function */
-a {
-  color: rgb(0, 195, 255);
-  color: hwb(194 0% 0%);
-  color: rgba(0, 195, 255, .5);
-  color: hwb(194 0% 0% / .5);
+.full-modern {
+  color: rgb(0, 255, 128);
+  color: hwb(150 0% 0%);
+}
+
+.alpha-modern {
+  color: rgba(43, 0, 255, .5);
+  color: hwb(250 0% 0% / .5);
+}
+
+.existing-fallback {
+  color: rgba(0, 170, 255, .5);
+  color: rgba(0, 170, 255, .5);
+  color: hwb(200 0% 0% / .5);
 }
 
 /* postcss-color-function */

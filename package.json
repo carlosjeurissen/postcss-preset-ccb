@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Collection of postcss plugins for improved compatibility and handling of future syntaxes.",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@csstools/postcss-color-function": "^2.1.0",
-    "@csstools/postcss-hwb-function": "^2.0.0",
+    "@csstools/postcss-hwb-function": "^2.1.1",
     "@csstools/postcss-is-pseudo-class": "^3.1.1",
     "@csstools/postcss-normalize-display-values": "^2.0.1",
     "@csstools/postcss-oklab-function": "^2.1.0",

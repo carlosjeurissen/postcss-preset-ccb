@@ -5,7 +5,7 @@ overrides:
 
 specifiers:
   '@csstools/postcss-color-function': ^2.1.0
-  '@csstools/postcss-hwb-function': ^2.0.0
+  '@csstools/postcss-hwb-function': ^2.1.1
   '@csstools/postcss-is-pseudo-class': ^3.1.1
   '@csstools/postcss-normalize-display-values': ^2.0.1
   '@csstools/postcss-oklab-function': ^2.1.0
@@ -66,7 +66,7 @@ specifiers:
 
 dependencies:
   '@csstools/postcss-color-function': 2.1.0_postcss@8.4.21
-  '@csstools/postcss-hwb-function': 2.0.0_postcss@8.4.21
+  '@csstools/postcss-hwb-function': 2.1.1_postcss@8.4.21
   '@csstools/postcss-is-pseudo-class': 3.1.1_postcss@8.4.21
   '@csstools/postcss-normalize-display-values': 2.0.1_postcss@8.4.21
   '@csstools/postcss-oklab-function': 2.1.0_postcss@8.4.21
@@ -534,12 +534,13 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
-  /@csstools/postcss-hwb-function/2.0.0_postcss@8.4.21:
-    resolution: {integrity: sha512-1rXMiRapGL6tQJsGKzvEY78DSDc4lZXQzPkHwRBuwoJvRAdtXWQyR00Jk73TOFkmVtmo5bdbS6Rnm1f01lpmlg==}
+  /@csstools/postcss-hwb-function/2.1.1_postcss@8.4.21:
+    resolution: {integrity: sha512-XijKzdxBdH2hU6IcPWmnaU85FKEF1XE5hGy0d6dQC6XznFUIRu1T4uebL3krayX40m4xIcxfCBsQm5zphzVrtg==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss: ^8.4
     dependencies:
+      '@csstools/color-helpers': 1.0.0
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
     dev: false

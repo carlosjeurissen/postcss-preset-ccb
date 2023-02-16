@@ -88,7 +88,7 @@ function getPluginList (options) {
 
     notComplyingStylelintCcb && upnextFeatures && require('postcss-custom-media')({ preserve: false }), // safe preprocessor (postcss-preset-env)
 
-    fallbackFeatures && require('postcss-custom-properties')({ preserve: true }), // safe fallback (postcss-preset-env) todo incorrect fallback
+    fallbackFeatures && require('postcss-custom-properties')({ preserve: true }), // safe fallback (postcss-preset-env)
     fallbackFeatures && require('postcss-double-position-gradients')({ preserve: true }), // safe fallback (postcss-preset-env)
     notComplyingStylelintCcb && fallbackFeatures && require('postcss-image-set-function')({ preserve: preserveUnlessMinify }),
 
@@ -108,7 +108,7 @@ function getPluginList (options) {
     Boolean(options.logicalDir) && fallbackFeatures && require('postcss-logical'), // tricky preprocessor (postcss-preset-env)
     Boolean(options.logicalDir) && upcomingFeatures && require('postcss-dir-pseudo-class'), // tricky preprocessor (postcss-preset-env)
 
-    fallbackFeatures && require('@csstools/postcss-text-decoration-shorthand')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
+    notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-text-decoration-shorthand')({ preserve: preserveUnlessMinify }), // safe preprocessor (postcss-preset-env)
 
     fallbackFeatures && require('postcss-color-functional-notation')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor (postcss-preset-env)
     notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-gray')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor, don't use (postcss-preset-env)
@@ -153,9 +153,9 @@ function getPluginList (options) {
     minifyCss && require('cssnano')({
       preset: [
         'default', {
-          discardComments: false,
           autoprefixer: true,
           cssDeclarationSorter: false,
+          discardComments: false,
           svgo: false,
           zindex: false,
         },

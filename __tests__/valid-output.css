@@ -330,15 +330,7 @@ nav :any-link > span {
 
 /* postcss-custom-selectors */
 
-article h1 + p {
-  margin-top: 0;
-}
-
-article h2 + p {
-  margin-top: 0;
-}
-
-article h3 + p {
+article h1 + p, article h2 + p, article h3 + p {
   margin-top: 0;
 }
 

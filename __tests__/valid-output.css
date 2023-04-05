@@ -5,21 +5,22 @@
   line-height: 1;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-transform: rotate(89.99995deg);
+          transform: rotate(89.99995deg);
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   transform: rotate(0deg);
   -webkit-transform: rotate(-135deg);
           transform: rotate(-135deg);
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   transform: rotate(-45deg);
-  -webkit-transform: rotate(80.54deg);
-          transform: rotate(80.54deg);
+  -webkit-transform: rotate(80.53768deg);
+          transform: rotate(80.53768deg);
 }
 
 /* postcss-stepped-value-functions */
@@ -204,7 +205,7 @@ html {
 }
 
 .alpha-modern {
-  color: rgba(43, 0, 255, .5);
+  color: rgba(43, 0, 255, 0.5);
   color: hwb(250 0% 0% / .5);
 }
 
@@ -215,12 +216,12 @@ html {
 
 /* postcss-color-function */
 .color {
-  color: rgb(179,35,35);
+  color: rgb(179, 35, 35);
   color: color(display-p3 0.64331 0.19245 0.16771);
 }
 
 :root {
-  --a-color: rgb(164,49,43);
+  --a-color: rgb(164, 49, 43);
 }
 
 @supports (color: color(srgb 0 0 0)) {
@@ -245,21 +246,25 @@ html {
 /* postcss-oklab-function */
 p {
   color: rgb(98, 172, 239);
-  color: color(display-p3 0.45207 0.66555 0.91656);
   color: oklab(72.322% -0.0465 -0.1150);
-  color: oklch(72.322% 0.12403 247.996);
+  background-color: rgb(98, 172, 239);
+  background-color: oklch(72.322% 0.12403 247.996);
 }
 
 /* postcss-lab-function */
 .color-lab {
   color: rgb(179, 35, 35);
-  color: color(display-p3 0.64331 0.19245 0.16771);
   color: lab(40% 56.6 39);
+}
+
+.color-lab-outside-srgb {
+  color: rgb(196, 0, 48);
+  color: color(display-p3 0.73296 0 0.17714);
+  color: lab(40% 80 39);
 }
 
 .color-lch {
   color: rgb(179, 35, 35);
-  color: color(display-p3 0.64331 0.19245 0.16771);
   color: lch(40% 68.735435 34.568626);
 }
 

@@ -216,8 +216,8 @@ p{
 }
 
 .color-lab-outside-srgb{
-  color:#c40030;
-  color:color(display-p3 .73296 0 .17714);
+  color:#c20031;
+  color:color(display-p3 .71499 0 .19398);
   color:lab(40% 80 39);
 }
 

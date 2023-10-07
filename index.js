@@ -47,7 +47,7 @@ function getPluginList (options) {
     );
   }
 
-  /* todo
+  /* TODO
     https://github.com/maximkoretskiy/postcss-initial, todo awaiting https://github.com/maximkoretskiy/postcss-initial/issues/49
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-attribute-case-insensitive
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-cascade-layers
@@ -59,13 +59,13 @@ function getPluginList (options) {
     notComplyingStylelintCcb && https://github.com/mrcgrtz/postcss-opacity-percentage
   */
 
-  /* todo easy additions
+  /* TODO easy additions
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-unset-value
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-scope-pseudo-class
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-viewport-units
   */
 
-  /* general todo
+  /* TODO general
     -webkit-text-decoration: underline;
     text-decoration: underline;
 
@@ -128,12 +128,12 @@ function getPluginList (options) {
 
     upcomingFeatures && require('@csstools/postcss-normalize-display-values'), // safe preprocessor, alternative: postcss-normalize-display-values
 
-    fallbackFeatures && require('pixrem'), // safe fallback
+    // TODO rem fallback, fallbackFeatures && require('postcss-rem-to-pixel-next')({ mediaQuery: false, propList: ['*'], replace: false }), // safe fallback
     notComplyingStylelintCcb && upcomingFeatures && require('postcss-ic-unit')({ preserve: true }), // safe fallback, alternative: @csstools/postcss-ic-unit
 
     fallbackFeatures && require('postcss-redundant-color-vars'), // safe fix fallback for https://bugs.webkit.org/show_bug.cgi?id=185940
     fallbackFeatures && require('postcss-clip-path-polyfill'), // safe fallback
-    fallbackFeatures && require('postcss-calc')({ preserve: true, precision: 10 }), // safe fallback
+    fallbackFeatures && require('postcss-calc')({ precision: 10, preserve: true }), // safe fallback
     fallbackFeatures && require('postcss-safe-area'),
     fallbackFeatures && require('postcss-flexbugs-fixes'), // safe fix preprocessor
     fallbackFeatures && require('postcss-will-change'), // safe fallback

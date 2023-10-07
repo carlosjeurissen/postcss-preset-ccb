@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.7.4",
+  "version": "0.8.0",
   "description": "Collection of postcss plugins for improved compatibility and handling of future syntaxes.",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -33,7 +33,6 @@
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.16",
     "cssnano": "^6.0.1",
-    "pixrem": "^5.0.0",
     "postcss": "^8.4.31",
     "postcss-calc": "^9.0.1",
     "postcss-clamp": "^4.1.0",

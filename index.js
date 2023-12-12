@@ -144,7 +144,7 @@ function getPluginList (options) {
     upcomingFeatures && require('postcss-font-variant'), // safe fallback (postcss-preset-env)
     upcomingFeatures && require('postcss-font-family-system-ui')({ preserve: true }), // safe fallback (postcss-preset-env) // browserlist
     upcomingFeatures && require('postcss-font-family-fangsong')({ preserve: true }),
-    upcomingFeatures && require('postcss-font-format-keywords')({ singleQuote: false }), // safe preprocessor
+    upcomingFeatures && require('@csstools/postcss-font-format-keywords')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor
 
     fallbackFeatures && require('postcss-nth-child-fix'), // safe fix for android 4.1 and 4.2 bug
 

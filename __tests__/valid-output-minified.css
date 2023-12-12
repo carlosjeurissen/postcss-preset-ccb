@@ -39,7 +39,6 @@ body{
 }
 
 .foo{
-  width:max(10px,min(4em,1280px));
   width:max(10px,min(4em,80rem));
 }
 
@@ -66,12 +65,16 @@ body{
 }
 
 .bar,.baz,.foo,.foy,.foz{
+  -webkit-flex:1 1;
   flex:1 1;
 }
 
 .fox{
+  -webkit-flex-grow:1;
   flex-grow:1;
+  -webkit-flex-shrink:0;
   flex-shrink:0;
+  -webkit-flex-basis:calc(1vw - 1px);
   flex-basis:calc(1vw - 1px);
 }
 
@@ -186,7 +189,7 @@ html{
   --a-color:#a4312b;
 }
 
-@supports (color: color(srgb 0 0 0)){
+@supports (color: color(display-p3 0 0 0)){
   :root{
     --a-color:color(srgb 0.64331 0.19245 0.16771);
   }
@@ -263,9 +266,12 @@ nav :link>span,nav :visited>span{
 }
 
 .example{
+  -webkit-align-self:center;
   align-self:center;
   justify-self:center;
+  -webkit-align-content:space-between;
   align-content:space-between;
+  -webkit-justify-content:center;
   justify-content:center;
 }
 
@@ -303,13 +309,11 @@ a c,a d,b c,b d{
 }
 
 h2{
-  -webkit-font-feature-settings:"smcp";
   font-feature-settings:"smcp";
   font-variant-caps:small-caps;
 }
 
 table{
-  -webkit-font-feature-settings:"lnum";
   font-feature-settings:"lnum";
   font-variant-numeric:lining-nums;
 }
@@ -369,7 +373,7 @@ h1{
 }
 
 .system-ui{
-  font-family:system-ui,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue;
 }
 
 .test{
@@ -443,8 +447,11 @@ h1{
   position:absolute;
   top:0;
   left:0;
+  display:-webkit-flex;
   display:flex;
+  -webkit-justify-content:center;
   justify-content:center;
+  -webkit-align-items:center;
   align-items:center;
   box-sizing:border-box;
   width:20px;
@@ -476,8 +483,6 @@ h1{
   display:inline-block;
   vertical-align:top;
   width:calc(100% - 56px);
-  -webkit-margin-start:16px;
-  margin-inline-start:16px;
   -webkit-margin-start:1rem;
   margin-inline-start:1rem;
   padding:1px 0;

@@ -280,7 +280,7 @@ header {
 /* postcss-color-functional-notation */
 :root {
   --firebrick: rgb(178, 34, 34);
-  --firebrick-a50: rgba(178, 34, 34, 0.5);
+  --firebrick-a50: rgba(179, 34, 34, 0.5);
   --firebrick-hsl: hsl(0, 68%, 42%);
   --firebrick-hsl-a50: hsla(0, 68%, 42%, 0.5);
 }
@@ -449,7 +449,7 @@ h1 {
 
 /* specific-use comma rgb values */
 .test {
-  color: rgb(125.4, 125.5, 125.6);
+  color: rgb(125, 126, 126);
 }
 
 /* specific-use inset-inline-start */

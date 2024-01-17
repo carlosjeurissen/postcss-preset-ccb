@@ -1,16 +1,21 @@
-/* eslint-env node, es2022, jest */
+/* eslint-env node, es2022 */
 /* eslint-disable
   global-require,
   no-autofix/strict,
-  unicorn/prefer-module,
 */
 
-'use strict';
+import {
+  describe,
+  expect,
+  test,
+} from 'vitest';
 
-const fs = require('node:fs');
+import fs from 'node:fs';
+import postcss from 'postcss';
+import postcssPrettify from 'postcss-prettify';
+import postcssDiscardComments from 'postcss-discard-comments';
 
-const postcss = require('postcss');
-const postcssPluginsPreset = require('..');
+import postcssPluginsPreset from '..';
 
 const inputCss = fs.readFileSync('./__tests__/input.css', 'utf8');
 const validOutputCss = fs.readFileSync('./__tests__/valid-output.css', 'utf8');
@@ -27,8 +32,8 @@ describe('The output matches expectations', () => {
     expect(css).toBe(validOutputCss);
 
     return postcss([
-      require('postcss-prettify'),
-      require('postcss-discard-comments'),
+      postcssPrettify,
+      postcssDiscardComments,
     ]).process(css, {
       from: undefined,
     }).then(({ css }) => {
@@ -42,8 +47,8 @@ describe('The output matches expectations', () => {
   })).process(inputCss, {
     from: undefined,
   }).then(({ css }) => postcss([
-    require('postcss-prettify'),
-    require('postcss-discard-comments'),
+    postcssPrettify,
+    postcssDiscardComments,
   ]).process(css, {
     from: undefined,
   })).then(({ css }) => {

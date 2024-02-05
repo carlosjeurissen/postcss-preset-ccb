@@ -114,7 +114,7 @@ function getPluginList (options) {
 
     fallbackFeatures && require('postcss-gap-properties')({ preserve: preserveUnlessMinify }), // safe fallback (postcss-preset-env), future-revisit 2022-06-20
     fallbackFeatures && require('postcss-media-minmax'), // safe preprocessor (postcss-preset-env)
-    upnextFeatures && require('@csstools/postcss-media-queries-aspect-ratio-number-values')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor
+    // TODO upnextFeatures && require('@csstools/postcss-media-queries-aspect-ratio-number-values')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor
     upnextFeatures && require('postcss-nesting'), // safe preprocessor (postcss-preset-env)
     upnextFeatures && require('postcss-custom-selectors')({ preserve: preserveOnceImplementedAnywhere }), // safe preprocessor (postcss-preset-env) future-revisit 2022-06-20
     fallbackFeatures && require('postcss-page-break'), // safe fallback (postcss-preset-env)

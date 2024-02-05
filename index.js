@@ -102,6 +102,15 @@ function getPluginList (options) {
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-env-function
   */
 
+  const cssNanoConfig = {
+    autoprefixer: true,
+    cssDeclarationSorter: false,
+    mergeIdents: false,
+    reduceIdents: false,
+    svgo: false,
+    zindex: false,
+  };
+
   const postcssPlugins = [
     Boolean(options.resolveImports) && require('postcss-import'), // non-standard preprocessor
     Boolean(options.inputRange) && require('postcss-input-range'), // non-standard preprocessor
@@ -174,13 +183,9 @@ function getPluginList (options) {
 
     minifyCss && require('cssnano')({
       preset: [
-        'default', {
-          autoprefixer: true,
-          cssDeclarationSorter: false,
-          discardComments: false,
-          svgo: false,
-          zindex: false,
-        },
+        'default',
+        cssNanoConfig,
+        { discardComments: false },
       ],
     }),
 
@@ -208,12 +213,8 @@ function getPluginList (options) {
 
     minifyCss && require('cssnano')({
       preset: [
-        'default', {
-          autoprefixer: true,
-          cssDeclarationSorter: false,
-          svgo: false,
-          zindex: false,
-        },
+        'default',
+        cssNanoConfig,
       ],
     }),
   ];

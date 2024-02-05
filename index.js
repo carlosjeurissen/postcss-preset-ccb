@@ -50,13 +50,9 @@ function getPluginList (options) {
   /* TODO
     https://github.com/maximkoretskiy/postcss-initial, todo awaiting https://github.com/maximkoretskiy/postcss-initial/issues/49
     notComplyingStylelintCcb && https://github.com/mrcgrtz/postcss-opacity-percentage
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-base-plugin
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-cascade-layers
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-mix-function
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-conditional-values
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-debug-logger
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-design-tokens
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-exponential-functions
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-extract
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-gamut-mapping
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-global-data
@@ -66,22 +62,21 @@ function getPluginList (options) {
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-overflow
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-overscroll-behavior
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-resize
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-viewport-units
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-minify
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-progressive-custom-properties
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-rebase-url
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-relative-color-syntax
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-slow-plugins
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-tape
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-todo-or-die
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-scope-pseudo-class
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-unset-value
   */
 
   /* TODO easy additions
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-unset-value
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-scope-pseudo-class
-    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-viewport-units
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-exponential-functions
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-mix-function
   */
 
   /* TODO not so easy
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-progressive-custom-properties
     https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-attribute-case-insensitive
   */
 
@@ -90,6 +85,16 @@ function getPluginList (options) {
     text-decoration: underline;
 
     autoprefixer should not prefix the above
+  */
+
+  /* maybe, low priority
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-todo-or-die
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-slow-plugins
+  */
+
+  /* technical plugins, no need to add
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-base-plugin
+    https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-debug-logger
   */
 
   /* potentials, requiring js

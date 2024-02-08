@@ -1,3 +1,5 @@
+@import url("/__tests__/import.css") (prefers-color-scheme: dark);
+
 /* postcss-trigonometric-functions */
 .trigonometry {
   line-height: sin(pi / 4);

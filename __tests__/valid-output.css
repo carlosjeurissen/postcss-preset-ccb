@@ -1,4 +1,12 @@
+@media (prefers-color-scheme: dark) {
 /* postcss-trigonometric-functions */
+.darkmode {
+  background: #fff;
+}
+}
+
+/* postcss-trigonometric-functions */
+
 .trigonometry {
   line-height: 0.70711;
   line-height: 0.70711;
@@ -24,6 +32,7 @@
 }
 
 /* postcss-stepped-value-functions */
+
 .test-functions {
   padding: 8px 3px 1px calc(3px + 50%);
   -webkit-transform: rotate(-50deg);
@@ -36,16 +45,19 @@
 }
 
 /* postcss-opacity-percentage */
+
 .foo {
   opacity: 0.45;
 }
 
 /* postcss-font-family-fangsong */
+
 body {
   font: 16pt/28pt fangsong, STFangsong, FangSong, FangSong_GB2312;
 }
 
 /* postcss-clamp */
+
 .foo {
   width: max(10px, min(4em, 80rem));
 }
@@ -59,11 +71,13 @@ body {
 }
 
 /* postcss-nth-child-fix */
+
 .foo:nth-child(1n) {
     color: blue;
 }
 
 /* postcss-will-change */
+
 .foo {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -71,14 +85,19 @@ body {
 }
 
 /* postcss-font-format-keywords */
+
 @font-face {
   src: url(file.woff2) format("woff2");
 }
 
 /* postcss-flexbugs-fixes */
+
 .foo { -webkit-flex: 1 1; flex: 1 1; }
+
 .bar { -webkit-flex: 1 1; flex: 1 1; }
+
 .foz { -webkit-flex: 1 1; flex: 1 1; }
+
 .baz { -webkit-flex: 1 1; flex: 1 1; }
 
 .foy { -webkit-flex: 1 1; flex: 1 1; }
@@ -86,6 +105,7 @@ body {
 .fox { -webkit-flex-grow: 1; flex-grow: 1; -webkit-flex-shrink: 0; flex-shrink: 0; -webkit-flex-basis: calc(1vw - 1px); flex-basis: calc(1vw - 1px); }
 
 /* postcss-safe-area */
+
 .foo {
   padding-top: 0;
   padding-top: constant(safe-area-inset-top);
@@ -97,6 +117,7 @@ body {
 }
 
 /* postcss-calc */
+
 h1 {
   font-size: 32px;
   font-size: calc(16px * 2);
@@ -108,6 +129,7 @@ h1 {
 }
 
 /* postcss-clip-path-polyfill */
+
 .test1 {
   -webkit-clip-path: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3CclipPath id="p" clipPathUnits="objectBoundingBox"%3E%3Cpolygon points="0.5 0, 0 1, 1 1"/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#p');
           clip-path: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3CclipPath id="p" clipPathUnits="objectBoundingBox"%3E%3Cpolygon points="0.5 0, 0 1, 1 1"/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#p');
@@ -116,6 +138,7 @@ h1 {
 }
 
 /* postcss-redundant-color-vars */
+
 .foo {
   --redundant-border: hsla(var(--primary-color), 0.5);
   border: 1px solid hsla(var(--primary-color), 0.5);
@@ -129,6 +152,7 @@ h1 {
 }
 
 /* postcss-ic-unit */
+
 p {
   text-indent: 2em;
   text-indent: 2ic;
@@ -140,6 +164,7 @@ p {
 }
 
 /* pixrem */
+
 .sky {
   margin: 2.5rem 2px 3em 100%;
   color: blue;
@@ -153,18 +178,21 @@ p {
 }
 
 /* postcss-normalize-display-values */
+
 .element {
   display: inline-block;
   display: inline flow-root;
 }
 
 /* postcss-replace-overflow-wrap */
+
 .overflow-wrap {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 /* postcss-overflow-shorthand */
+
 html {
   overflow-x: hidden;
   overflow-y: auto;
@@ -172,6 +200,7 @@ html {
 }
 
 /* postcss-overflow-clip */
+
 .overflow-clip {
   overflow: hidden;
   overflow: clip;
@@ -182,6 +211,7 @@ html {
 }
 
 /* overflow-combined */
+
 .overflow-combined-1 {
   overflow-x: hidden;
   overflow-x: clip;
@@ -197,6 +227,7 @@ html {
 }
 
 /* postcss-hwb-function */
+
 .full-modern {
   color: rgb(0, 255, 128);
   color: hwb(150 0% 0%);
@@ -213,6 +244,7 @@ html {
 }
 
 /* postcss-color-function */
+
 .color {
   color: rgb(179, 35, 35);
   color: color(display-p3 0.64331 0.19245 0.16771);
@@ -229,6 +261,7 @@ html {
 }
 
 /* postcss-color-mod-function */
+
 :root {
   --brand-red:      rgb(255, 128, 0);
   --brand-red-hsl:  hsl(30, 100%, 50%);
@@ -237,11 +270,13 @@ html {
 }
 
 /* postcss-color-rebeccapurple */
+
 .heading {
   color: #639;
 }
 
 /* postcss-oklab-function */
+
 p {
   color: rgb(98, 172, 239);
   color: oklab(72.322% -0.0465 -0.1150);
@@ -250,6 +285,7 @@ p {
 }
 
 /* postcss-lab-function */
+
 .color-lab {
   color: rgb(179, 35, 35);
   color: lab(40% 56.6 39);
@@ -267,17 +303,20 @@ p {
 }
 
 /* postcss-color-hex-alpha */
+
 body {
   background: rgba(153,221,153,0.8);
 }
 
 /* postcss-color-gray */
+
 header {
   background-color: rgb(255,255,255);
   color: rgba(0,0,0,0.9);
 }
 
 /* postcss-color-functional-notation */
+
 :root {
   --firebrick: rgb(178, 34, 34);
   --firebrick-a50: rgba(179, 34, 34, 0.5);
@@ -286,40 +325,48 @@ header {
 }
 
 /* postcss-selector-not */
+
 p:not(:first-child):not(.special) {
   color: red;
 }
 
 /* postcss-pseudo-any */
+
 :-moz-any(.good),
 :-moz-any(.well),
 [class^='base-']:-moz-any(a),
 :-moz-any(p, ul, ol) {
   color: blue
 }
+
 :-webkit-any(.good),
 :-webkit-any(.well),
 [class^='base-']:-webkit-any(a),
 :-webkit-any(p, ul, ol) {
   color: blue
 }
+
 .bar,
 .foo {
   color: blue
 }
 
 /* postcss-pseudo-class-any-link */
+
 nav :link > span, nav :visited > span {
   background-color: yellow;
 }
+
 nav :-webkit-any-link > span {
   background-color: yellow;
 }
+
 nav :any-link > span {
   background-color: yellow;
 }
 
 /* postcss-place */
+
 .example {
   -webkit-align-self: center;
           align-self: center;
@@ -333,6 +380,7 @@ nav :any-link > span {
 }
 
 /* postcss-page-break */
+
 .foo {
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
@@ -349,14 +397,17 @@ article h1 + p, article h2 + p, article h3 + p {
 }
 
 /* postcss-nesting */
+
 a, b {
   color: red;
 }
+
 a c, b c, a d, b d {
     color: white;
   }
 
 /* postcss-media-minmax */
+
 @media screen and (min-width: 500px) and (max-width: 1200px) {
   .bar {
     display: block;
@@ -372,6 +423,7 @@ a c, b c, a d, b d {
 }
 
 /* postcss-font-variant */
+
 h2 {
   font-feature-settings: "smcp";
   font-variant-caps: small-caps;
@@ -383,6 +435,7 @@ table {
 }
 
 /* postcss-text-decoration-shorthand */
+
 .example {
   text-decoration: underline;
   -webkit-text-decoration: underline wavy purple;
@@ -401,6 +454,7 @@ table {
 }
 
 /* postcss-custom-properties */
+
 :root {
   --color: red;
 }
@@ -432,6 +486,7 @@ h1 {
 }
 
 /* postcss-double-position-gradients */
+
 .linear-gradient {
   background-image: linear-gradient(90deg, black 25%,black 50%, blue 50%, blue 75%);
   background-image: linear-gradient(90deg, black 25% 50%, blue 50% 75%);
@@ -443,21 +498,25 @@ h1 {
 }
 
 /* postcss-font-family-system-ui */
+
 .system-ui {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
 }
 
 /* specific-use comma rgb values */
+
 .test {
   color: rgb(125, 126, 126);
 }
 
 /* specific-use inset-inline-start */
+
 .foo {
   inset-inline-start: 8px;
 }
 
 /* specific-use image-set */
+
 .image-set {
   background-image: url(img/test.png);
   background-image: -webkit-image-set(url(img/test.png) 1x,
@@ -467,23 +526,29 @@ h1 {
                               url(img/test-2x.png) 2x,
                               url(my-img-print.png) 600dpi);
 }
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
 .image-set {
   background-image: url(img/test-2x.png);
 }
 }
+
 @media (-webkit-min-device-pixel-ratio: 6.25), (min-resolution: 600dpi) {
+
 .image-set {
   background-image: url(my-img-print.png);
 }
 }
 
 /* specific-use z-index */
+
 .test-z-index {
   z-index: 50;
 }
 
 /* specific-use alpha-value percentage */
+
 .test-alpha-value {
   opacity: 0.2;
   background-color: rgba(128, 130, 132, 0.2);
@@ -491,6 +556,7 @@ h1 {
 }
 
 /* specific-use mess */
+
 .test__ten {
   position: relative;
   display: inline-block;

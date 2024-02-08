@@ -23,6 +23,7 @@ const validOutputMinifiedCss = fs.readFileSync('./__tests__/valid-output-minifie
 
 describe('The output matches expectations', () => {
   test('normal output', () => postcss(postcssPluginsPreset({
+    resolveImports: true,
     next: true,
     minify: false,
   })).process(inputCss, {
@@ -42,6 +43,7 @@ describe('The output matches expectations', () => {
   }));
 
   test('minified output', () => postcss(postcssPluginsPreset({
+    resolveImports: true,
     next: true,
     minify: true,
   })).process(inputCss, {

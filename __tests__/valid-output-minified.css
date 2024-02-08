@@ -1,3 +1,9 @@
+@media (prefers-color-scheme: dark){
+  .darkmode{
+    background:#fff;
+  }
+}
+
 .trigonometry{
   line-height:.70711;
   line-height:1;

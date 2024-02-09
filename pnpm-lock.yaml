@@ -183,8 +183,8 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.0(postcss@8.4.35)
   postcss-overflow-clip:
-    specifier: ^0.3.0
-    version: 0.3.0(postcss@8.4.35)
+    specifier: ^0.3.1
+    version: 0.3.1(postcss@8.4.35)
   postcss-overflow-shorthand:
     specifier: ^5.0.1
     version: 5.0.1(postcss@8.4.35)
@@ -224,8 +224,8 @@ devDependencies:
     specifier: ^8.56.0
     version: 8.56.0
   eslint-config-ccb:
-    specifier: ^0.16.2
-    version: 0.16.2
+    specifier: ^0.16.3
+    version: 0.16.3
   postcss-discard-comments:
     specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.35)
@@ -2001,8 +2001,8 @@ packages:
       object.entries: 1.1.7
     dev: true
 
-  /eslint-config-ccb@0.16.2:
-    resolution: {integrity: sha512-wyo3/OfME9OenqgDPSCJ3DUD/ssbcylE1ZEgdYG1i+txq8yq6ibu7CYio4eX0pLIq0GNbTpeue9kRJCxxl1ORQ==}
+  /eslint-config-ccb@0.16.3:
+    resolution: {integrity: sha512-fRlNJ0njMNHOcJKwqhyQN9okIomqOvOnv+Quh/zhEu7iu4Nv9RGQaQL+BqaJz0HaZWa3btc8qwJDa+h8ttgceA==}
     dependencies:
       eslint: 8.56.0
       eslint-config-airbnb: 19.0.4(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint@8.56.0)
@@ -2013,7 +2013,7 @@ packages:
       eslint-plugin-react: 7.33.2(eslint@8.56.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.56.0)
       eslint-plugin-security: 1.7.1
-      eslint-plugin-unicorn: 50.0.1(eslint@8.56.0)
+      eslint-plugin-unicorn: 51.0.1(eslint@8.56.0)
       eslint-plugin-unused-imports: 3.0.0(eslint@8.56.0)
       eslint-plugin-vue: 9.21.1(eslint@8.56.0)
       vue: 3.4.18
@@ -2184,8 +2184,8 @@ packages:
       safe-regex: 2.1.1
     dev: true
 
-  /eslint-plugin-unicorn@50.0.1(eslint@8.56.0):
-    resolution: {integrity: sha512-KxenCZxqSYW0GWHH18okDlOQcpezcitm5aOSz6EnobyJ6BIByiPDviQRjJIUAjG/tMN11958MxaQ+qCoU6lfDA==}
+  /eslint-plugin-unicorn@51.0.1(eslint@8.56.0):
+    resolution: {integrity: sha512-MuR/+9VuB0fydoI0nIn2RDA5WISRn4AsJyNSaNKLVwie9/ONvQhxOBbkfSICBPnzKrB77Fh6CZZXjgTt/4Latw==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>=8.56.0'
@@ -3778,8 +3778,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-overflow-clip@0.3.0(postcss@8.4.35):
-    resolution: {integrity: sha512-Ii2A2N5hGzMMlResOd1sfKinLJ3sqI/Ud+rYh2Es9M/m2S/6dxCVVsNo3/k9iam2Lu4PDi6r+ZzG2z+BSDecRg==}
+  /postcss-overflow-clip@0.3.1(postcss@8.4.35):
+    resolution: {integrity: sha512-BMYNPn2giQ8orxYBN91F8nCbF69xVwdjiBzsFG29cdOT1jSbcn+X5V90tap9VotWYKPEC4PTggWwrAbWqpfzfQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       postcss: '>=8.4.31'

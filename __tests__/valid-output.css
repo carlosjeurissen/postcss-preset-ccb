@@ -59,6 +59,7 @@ body {
 /* postcss-clamp */
 
 .foo {
+  width: max(10px, min(4em, 1280px));
   width: max(10px, min(4em, 80rem));
 }
 
@@ -166,6 +167,7 @@ p {
 /* pixrem */
 
 .sky {
+  margin: 40px 2px 3em 100%;
   margin: 2.5rem 2px 3em 100%;
   color: blue;
 }
@@ -629,6 +631,8 @@ h1 {
   display: inline-block;
   vertical-align: top;
   width: calc(100% - 56px);
+  -webkit-margin-start: 16px;
+          margin-inline-start: 16px;
   -webkit-margin-start: 1rem;
           margin-inline-start: 1rem;
   padding: 1px 0;

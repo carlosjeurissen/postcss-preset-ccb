@@ -45,6 +45,7 @@ body{
 }
 
 .foo{
+  width:max(10px,min(4em,1280px));
   width:max(10px,min(4em,80rem));
 }
 
@@ -489,6 +490,8 @@ h1{
   display:inline-block;
   vertical-align:top;
   width:calc(100% - 56px);
+  -webkit-margin-start:16px;
+  margin-inline-start:16px;
   -webkit-margin-start:1rem;
   margin-inline-start:1rem;
   padding:1px 0;

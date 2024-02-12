@@ -165,7 +165,7 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-will-change'), // safe fallback
     fallbackFeatures && require('postcss-flexbugs-fixes'), // safe fix preprocessor
     fallbackFeatures && require('postcss-nth-child-fix'), // safe fix for android 4.1 and 4.2 bug
-    // TODO rem fallback, fallbackFeatures && require('postcss-rem-to-pixel-next')({ mediaQuery: false, propList: ['*'], replace: false }), // safe fallback
+    fallbackFeatures && require('postcss-pixrem')({ browsers: null }), // safe fallback
 
     fallbackFeatures && require('autoprefixer'), // safe fallback (preset-env)
 

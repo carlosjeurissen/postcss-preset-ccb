@@ -130,7 +130,7 @@ function getPluginList (options) {
     notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-scope-pseudo-class')({ preserve: preserveOnlyForAdditionalClarity }),
     // TODO JS require('css-has-pseudo'), (preset-env: 'has-pseudo-class')
     fallbackFeatures && require('postcss-gap-properties')({ preserve: preserveUnlessMinify }), // safe fallback (preset-env), future-revisit 2022-06-20
-    fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // safe fallback (preset-env: 'overflow-property')
+    notComplyingStylelintCcb && fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // (preset-env: 'overflow-property')
     fallbackFeatures && require('postcss-replace-overflow-wrap')({ method: 'copy' }), // safe fallback (preset-env: 'overflow-wrap-property')
     fallbackFeatures && require('postcss-place')({ preserve: preserveUnlessMinify }), // safe preprocessor (preset-env: 'place-properties')
     upcomingFeatures && require('postcss-font-family-fangsong')({ preserve: true }),
@@ -160,7 +160,7 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-calc')({ precision: 10, preserve: true }), // safe fallback
     // TODO JS https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-within
     fallbackFeatures && require('postcss-redundant-color-vars'), // safe fix fallback for https://bugs.webkit.org/show_bug.cgi?id=185940
-    fallbackFeatures && require('postcss-overflow-clip')({ add: false }),
+    fallbackFeatures && require('postcss-overflow-fallbacks')({ addOverlayFallback: notComplyingStylelintCcb }),
     fallbackFeatures && require('postcss-clip-path-polyfill'), // safe fallback
     fallbackFeatures && require('postcss-will-change'), // safe fallback
     fallbackFeatures && require('postcss-flexbugs-fixes'), // safe fix preprocessor

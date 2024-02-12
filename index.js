@@ -155,7 +155,7 @@ function getPluginList (options) {
 
     fallbackFeatures && require('@csstools/postcss-cascade-layers'), // (preset-env)
 
-    // TODO easy fallbackFeatures && require('@csstools/postcss-gamut-mapping'), // (preset-env)
+    fallbackFeatures && require('@csstools/postcss-gamut-mapping'), // (preset-env)
 
     fallbackFeatures && require('postcss-calc')({ precision: 10, preserve: true }), // safe fallback
     // TODO JS https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-within

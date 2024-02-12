@@ -228,7 +228,12 @@ p{
 .color-lab-outside-srgb{
   color:#c20031;
   color:color(display-p3 .71499 0 .19398);
-  color:lab(40% 80 39);
+}
+
+@media (color-gamut: rec2020){
+  .color-lab-outside-srgb{
+    color:lab(40% 80 39);
+  }
 }
 
 .color-lch{

@@ -218,6 +218,8 @@ html {
   overflow-x: hidden;
   overflow-x: clip;
   overflow-y: hidden;
+  overflow: hidden;
+  overflow: hidden hidden;
   overflow: clip hidden;
 }
 
@@ -225,6 +227,9 @@ html {
   overflow-x: hidden;
   overflow-x: clip;
   overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow: hidden auto;
   overflow: clip auto;
 }
 

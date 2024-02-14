@@ -275,27 +275,47 @@ p:not(:first-child):not(.special){
   color:red;
 }
 
-:-moz-any(.good),:-moz-any(.well),:-moz-any(p,ul,ol),[class^=base-]:-moz-any(a){
+:-moz-any(p,ul,ol),[class^=base-]:-moz-any(a){
   color:blue;
 }
 
-:-webkit-any(.good),:-webkit-any(.well),:-webkit-any(p,ul,ol),[class^=base-]:-webkit-any(a){
+:-webkit-any(p,ul,ol),[class^=base-]:-webkit-any(a){
   color:blue;
 }
 
-.bar,.foo{
+.bar,.foo,.good,:matches(.well){
   color:blue;
 }
 
-.foobar:-moz-any(.bar,.foo){
+.foobar-iS.bar-iS,.foobar-iS.foo-iS,.foobar-is.bar-is,.foobar-is.foo-is{
   color:blue;
 }
 
-.foobar:-webkit-any(.bar,.foo){
-  color:blue;
+.foobar-matches:matches(.bar-matches,.foo-matches){
+  color:lime;
 }
 
-.barfoo:where(.bar,.foo){
+.foobar-csstools-matches:-csstools-matches(.bar-csstools-matches,.foo-csstools-matches){
+  color:pink;
+}
+
+.foobar-moz-any:-moz-any(.bar-moz-any,.foo-moz-any),.foobar-moz-any:-webkit-any(.bar-moz-any,.foo-moz-any){
+  color:#ff0;
+}
+
+.foobar-webkit-any:-moz-any(.bar-webkit-any,.foo-webkit-any),.foobar-webkit-any:-webkit-any(.bar-webkit-any,.foo-webkit-any){
+  color:orange;
+}
+
+.foobar-any:-moz-any(.bar-any,.foo-any){
+  color:green;
+}
+
+.foobar-any:-webkit-any(.bar-any,.foo-any){
+  color:green;
+}
+
+.foobar-where:where(.bar-where,.foo-where){
   color:red;
 }
 

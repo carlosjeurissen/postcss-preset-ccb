@@ -258,12 +258,46 @@ p:not(:first-child, .special) {
   color: blue;
 }
 
-/* is and where */
-.foobar:is(.bar, .foo) {
+/* is pseudo class */
+.foobar-is:is(.bar-is, .foo-is) {
   color: blue;
 }
 
-.barfoo:where(.bar, .foo) {
+.foobar-iS:iS(.bar-iS, .foo-iS) {
+  color: blue;
+}
+
+/* matches pseudo class */
+.foobar-matches:matches(.bar-matches, .foo-matches) {
+  color: lime;
+}
+
+/* csstools-matches pseudo class */
+.foobar-csstools-matches:-csstools-matches(.bar-csstools-matches, .foo-csstools-matches) {
+  color: pink;
+}
+
+/* -moz-any pseudo class */
+
+.foobar-moz-any:-moz-any(.bar-moz-any, .foo-moz-any) {
+  color: yellow;
+}
+
+/* -webkit-any pseudo class */
+
+.foobar-webkit-any:-webkit-any(.bar-webkit-any, .foo-webkit-any) {
+  color: orange;
+}
+
+/* any pseudo class */
+
+.foobar-any:any(.bar-any, .foo-any) {
+  color: green;
+}
+
+/* where pseudo class */
+
+.foobar-where:where(.bar-where, .foo-where) {
   color: red;
 }
 

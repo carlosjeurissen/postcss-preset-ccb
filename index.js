@@ -110,7 +110,7 @@ function getPluginList (options) {
     upcomingFeatures && require('@csstools/postcss-gradients-interpolation-method')({ preserve: true }), // (preset-env) (order: run before all color functions)
     notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-gray')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor, don't use
     notComplyingStylelintCcb && fallbackUnshipped && require('postcss-color-mod-function')({}), // safe preprocessor, don't use
-    fallbackFeatures && require('@csstools/postcss-color-mix-function')({ preserve: true }), // (preset-env) (order: run before any other color functions)
+    notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-color-mix-function')({ preserve: true }), // (preset-env) (order: run before any other color functions)
     upcomingFeatures && require('@csstools/postcss-relative-color-syntax')({ preserve: preserveOnlyForAdditionalClarity }), // (preset-env)
     notComplyingStylelintCcb && fallbackFeatures && require('postcss-lab-function')({ preserve: true }), // safe preprocessor (preset-env)
     notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-oklab-function')({ preserve: true }), // safe preprocessor (preset-env)
@@ -124,8 +124,9 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-page-break'), // safe fallback (preset-env: 'break-properties')
     fallbackFeatures && require('postcss-font-variant'), // safe fallback (preset-env: 'font-variant-property')
 
-    fallbackFeatures && require('postcss-pseudo-any')({ matchModern: true, matchPrefixed: true }), // specificity-unsafe preprocessor, future-revisit (preset-env: ''), alternative: https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-is-pseudo-class (order: after other selector transforms, before :has())
-    fallbackFeatures && require('@csstools/postcss-is-pseudo-class'), // specificity-unsafe preprocessor, required for postcss-custom-selectors
+    // TODO properly handle is and any fallbacks (two plugins below)
+    fallbackFeatures && require('@csstools/postcss-is-pseudo-class'), // specificity-unsafe preprocessor, required for postcss-custom-selectors (preset-env: '') (order: after other selector transforms, before :has())
+    fallbackFeatures && require('postcss-pseudo-any')({ matchModern: false, matchPrefixed: true }), // specificity-unsafe preprocessor (order: before postcss-is-pseudo-class)
 
     notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-scope-pseudo-class')({ preserve: preserveOnlyForAdditionalClarity }),
     // TODO JS require('css-has-pseudo'), (preset-env: 'has-pseudo-class')

@@ -141,6 +141,16 @@ html {
   overflow: hidden auto;
 }
 
+.important {
+  overflow-x: overlay;
+  overflow: hidden auto !important;
+}
+
+.important-alt {
+  overflow-x: overlay !important;
+  overflow: hidden auto;
+}
+
 /* postcss-overflow-clip */
 .overflow-clip {
   overflow: clip;
@@ -245,7 +255,16 @@ p:not(:first-child, .special) {
 [class^='base-']:any(a),
 :any(p, ul, ol),
 .foo {
-  color: blue
+  color: blue;
+}
+
+/* is and where */
+.foobar:is(.bar, .foo) {
+  color: blue;
+}
+
+.barfoo:where(.bar, .foo) {
+  color: red;
 }
 
 /* postcss-pseudo-class-any-link */

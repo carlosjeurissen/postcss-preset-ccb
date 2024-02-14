@@ -151,6 +151,20 @@ html{
   overflow-y:auto;
 }
 
+.important{
+  overflow-x:auto;
+  overflow-x:overlay;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+}
+
+.important-alt{
+  overflow-x:auto!important;
+  overflow-x:overlay!important;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
 .overflow-clip{
   overflow:hidden;
   overflow:clip;
@@ -271,6 +285,18 @@ p:not(:first-child):not(.special){
 
 .bar,.foo{
   color:blue;
+}
+
+.foobar:-moz-any(.bar,.foo){
+  color:blue;
+}
+
+.foobar:-webkit-any(.bar,.foo){
+  color:blue;
+}
+
+.barfoo:where(.bar,.foo){
+  color:red;
 }
 
 nav :link>span,nav :visited>span{

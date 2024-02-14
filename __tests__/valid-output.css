@@ -201,6 +201,22 @@ html {
   overflow: hidden auto;
 }
 
+.important {
+  overflow-x: auto;
+  overflow-x: overlay;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overflow: hidden auto !important;
+}
+
+.important-alt {
+  overflow-x: auto !important;
+  overflow-x: overlay !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow: hidden auto;
+}
+
 /* postcss-overflow-clip */
 
 .overflow-clip {
@@ -348,19 +364,33 @@ p:not(:first-child):not(.special) {
 :-moz-any(.well),
 [class^='base-']:-moz-any(a),
 :-moz-any(p, ul, ol) {
-  color: blue
+  color: blue;
 }
 
 :-webkit-any(.good),
 :-webkit-any(.well),
 [class^='base-']:-webkit-any(a),
 :-webkit-any(p, ul, ol) {
-  color: blue
+  color: blue;
 }
 
 .bar,
 .foo {
-  color: blue
+  color: blue;
+}
+
+/* is and where */
+
+.foobar:-moz-any(.bar, .foo) {
+  color: blue;
+}
+
+.foobar:-webkit-any(.bar, .foo) {
+  color: blue;
+}
+
+.barfoo:where(.bar, .foo) {
+  color: red;
 }
 
 /* postcss-pseudo-class-any-link */

@@ -389,7 +389,7 @@ p:not(:first-child):not(.special) {
 
 /* matches pseudo class */
 
-.foobar-matches:matches(.bar-matches, .foo-matches) {
+.foobar-matches.bar-matches, .foobar-matches.foo-matches {
   color: lime;
 }
 

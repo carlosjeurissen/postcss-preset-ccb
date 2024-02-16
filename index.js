@@ -20,6 +20,7 @@ function getPluginList (options) {
   const preserveUnlessMinify = !minifyCss;
   const preserveOnlyForAdditionalClarity = preserveUnlessMinify && false;
   const preserveOnceImplementedAnywhere = false;
+  const requiredForCcb = true;
 
   const blockDirection = options.blockDirection || 'left-to-right';
   const inlineDirection = options.inlineDirection || 'top-to-bottom';
@@ -125,12 +126,13 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-font-variant'), // safe fallback (preset-env: 'font-variant-property')
 
     // TODO properly handle is and any fallbacks (two plugins below)
+    fallbackFeatures && require('postcss-matches-is-pseudo-class')({ preserve: preserveOnlyForAdditionalClarity }),
     fallbackFeatures && require('@csstools/postcss-is-pseudo-class'), // specificity-unsafe preprocessor, required for postcss-custom-selectors (preset-env: '') (order: after other selector transforms, before :has())
     fallbackFeatures && require('postcss-pseudo-any')({ matchModern: false, matchPrefixed: true }), // specificity-unsafe preprocessor (order: before postcss-is-pseudo-class)
 
     notComplyingStylelintCcb && fallbackFeatures && require('@csstools/postcss-scope-pseudo-class')({ preserve: preserveOnlyForAdditionalClarity }),
     // TODO JS require('css-has-pseudo'), (preset-env: 'has-pseudo-class')
-    fallbackFeatures && require('postcss-gap-properties')({ preserve: preserveUnlessMinify }), // safe fallback (preset-env), future-revisit 2022-06-20
+    requiredForCcb && fallbackFeatures && require('postcss-gap-properties')({ preserve: preserveUnlessMinify }), // safe fallback (preset-env), future-revisit 2022-06-20
     notComplyingStylelintCcb && fallbackFeatures && require('postcss-overflow-shorthand')({ preserve: preserveUnlessMinify }), // (preset-env: 'overflow-property')
     fallbackFeatures && require('postcss-replace-overflow-wrap')({ method: 'copy' }), // safe fallback (preset-env: 'overflow-wrap-property')
     fallbackFeatures && require('postcss-place')({ preserve: preserveUnlessMinify }), // safe preprocessor (preset-env: 'place-properties')

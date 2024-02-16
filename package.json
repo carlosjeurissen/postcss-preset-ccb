@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.13.4",
+  "version": "0.14.0",
   "description": "Collection of postcss plugins for improved compatibility and handling of future syntaxes.",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -18,9 +18,9 @@
     "postcss-preset-ccb": "index.js"
   },
   "scripts": {
-    "lint-fix": "eslint *.js --fix",
     "test": "vitest run",
-    "watch": "vitest watch"
+    "watch": "vitest watch",
+    "lint-fix": "eslint *.js --fix"
   },
   "dependencies": {
     "@csstools/postcss-cascade-layers": "^4.0.2",
@@ -73,15 +73,16 @@
     "postcss-font-variant": "^5.0.0",
     "postcss-gap-properties": "^5.0.1",
     "postcss-image-set-function": "^6.0.2",
-    "postcss-import": "^15.1.0",
+    "postcss-import": "^16.0.1",
     "postcss-input-range": "^5.0.0",
     "postcss-lab-function": "^6.0.9",
     "postcss-logical": "^7.0.1",
+    "postcss-matches-is-pseudo-class": "^1.0.1",
     "postcss-media-minmax": "^5.0.0",
     "postcss-nesting": "^12.0.2",
     "postcss-nth-child-fix": "^2.0.0",
     "postcss-opacity-percentage": "^2.0.0",
-    "postcss-overflow-fallbacks": "^1.0.0",
+    "postcss-overflow-fallbacks": "^1.0.1",
     "postcss-overflow-shorthand": "^5.0.1",
     "postcss-page-break": "^3.0.4",
     "postcss-pixrem": "^6.0.0",
@@ -97,7 +98,7 @@
   },
   "devDependencies": {
     "eslint": "^8.56.0",
-    "eslint-config-ccb": "^0.16.4",
+    "eslint-config-ccb": "^0.16.5",
     "postcss-discard-comments": "^6.0.1",
     "postcss-prettify": "^0.3.4",
     "vitest": "^1.2.2"
@@ -122,11 +123,11 @@
     }
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=14.0.0"
   },
   "pnpm": {
     "overrides": {
-      "postcss-import@>15": "<=15",
+      "postcss@<7.0.36": ">=7.0.36",
       "postcss@<8.4.31": ">=8.4.31"
     }
   }

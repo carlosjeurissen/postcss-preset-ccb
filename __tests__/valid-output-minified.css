@@ -291,7 +291,7 @@ p:not(:first-child):not(.special){
   color:blue;
 }
 
-.foobar-matches:matches(.bar-matches,.foo-matches){
+.foobar-matches.bar-matches,.foobar-matches.foo-matches{
   color:lime;
 }
 

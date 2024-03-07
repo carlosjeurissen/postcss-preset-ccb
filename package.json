@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.14.2",
+  "version": "0.15.0",
   "description": "Collection of postcss plugins for improved compatibility and handling of future syntaxes.",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
@@ -51,8 +51,8 @@
     "@csstools/postcss-trigonometric-functions": "^3.0.5",
     "@csstools/postcss-unset-value": "^3.0.1",
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "autoprefixer": "^10.4.17",
-    "cssnano": "^6.0.5",
+    "autoprefixer": "^10.4.18",
+    "cssnano": "^6.1.0",
     "postcss": "^8.4.35",
     "postcss-calc": "^9.0.1",
     "postcss-clamp": "^4.1.0",
@@ -79,7 +79,7 @@
     "postcss-logical": "^7.0.1",
     "postcss-matches-is-pseudo-class": "^1.0.1",
     "postcss-media-minmax": "^5.0.0",
-    "postcss-nesting": "^12.0.4",
+    "postcss-nesting": "^12.1.0",
     "postcss-nth-child-fix": "^2.0.0",
     "postcss-opacity-percentage": "^2.0.0",
     "postcss-overflow-fallbacks": "^1.0.1",
@@ -99,7 +99,7 @@
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-config-ccb": "^0.17.1",
-    "postcss-discard-comments": "^6.0.1",
+    "postcss-discard-comments": "^6.0.2",
     "postcss-prettify": "^0.3.4",
     "vitest": "^1.3.1"
   },

@@ -74,7 +74,7 @@ body {
 /* postcss-nth-child-fix */
 
 .foo:nth-child(1n) {
-    color: blue;
+  color: blue;
 }
 
 /* postcss-will-change */
@@ -93,17 +93,39 @@ body {
 
 /* postcss-flexbugs-fixes */
 
-.foo { -webkit-flex: 1 1; flex: 1 1; }
+.foo {
+  -webkit-flex: 1 1;
+          flex: 1 1;
+}
 
-.bar { -webkit-flex: 1 1; flex: 1 1; }
+.bar {
+  -webkit-flex: 1 1;
+          flex: 1 1;
+}
 
-.foz { -webkit-flex: 1 1; flex: 1 1; }
+.foz {
+  -webkit-flex: 1 1;
+          flex: 1 1;
+}
 
-.baz { -webkit-flex: 1 1; flex: 1 1; }
+.baz {
+  -webkit-flex: 1 1;
+          flex: 1 1;
+}
 
-.foy { -webkit-flex: 1 1; flex: 1 1; }
+.foy {
+  -webkit-flex: 1 1;
+          flex: 1 1;
+}
 
-.fox { -webkit-flex-grow: 1; flex-grow: 1; -webkit-flex-shrink: 0; flex-shrink: 0; -webkit-flex-basis: calc(1vw - 1px); flex-basis: calc(1vw - 1px); }
+.fox {
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  -webkit-flex-basis: calc(1vw - 1px);
+          flex-basis: calc(1vw - 1px);
+}
 
 /* postcss-safe-area */
 
@@ -124,7 +146,7 @@ h1 {
   font-size: calc(16px * 2);
   height: calc(100px - 2em);
   width: calc(var(--base-width)*2);
-  width: calc(2*var(--base-width));
+  width: calc(2 * var(--base-width));
   margin-bottom: 24px;
   margin-bottom: calc(16px * 1.5);
 }
@@ -258,12 +280,12 @@ html {
 
 .alpha-modern {
   color: rgba(43, 0, 255, 0.5);
-  color: hwb(250 0% 0% / .5);
+  color: hwb(250 0% 0% / 0.5);
 }
 
 .existing-fallback {
-  color: rgba(0, 170, 255, .5);
-  color: hwb(200 0% 0% / .5);
+  color: rgba(0, 170, 255, 0.5);
+  color: hwb(200 0% 0% / 0.5);
 }
 
 /* postcss-color-function */
@@ -286,9 +308,9 @@ html {
 /* postcss-color-mod-function */
 
 :root {
-  --brand-red:      rgb(255, 128, 0);
-  --brand-red-hsl:  hsl(30, 100%, 50%);
-  --brand-red-hwb:  rgb(255, 128, 0);
+  --brand-red: rgb(255, 128, 0);
+  --brand-red-hsl: hsl(30, 100%, 50%);
+  --brand-red-hwb: rgb(255, 128, 0);
   --brand-red-dark: rgb(204, 0, 0);
 }
 
@@ -302,7 +324,7 @@ html {
 
 p {
   color: rgb(98, 172, 239);
-  color: oklab(72.322% -0.0465 -0.1150);
+  color: oklab(72.322% -0.0465 -0.115);
   background-color: rgb(98, 172, 239);
   background-color: oklch(72.322% 0.12403 247.996);
 }
@@ -360,12 +382,12 @@ p:not(:first-child):not(.special) {
 
 /* postcss-pseudo-any */
 
-[class^='base-']:-moz-any(a),
+[class^="base-"]:-moz-any(a),
 :-moz-any(p, ul, ol) {
   color: blue;
 }
 
-[class^='base-']:-webkit-any(a),
+[class^="base-"]:-webkit-any(a),
 :-webkit-any(p, ul, ol) {
   color: blue;
 }
@@ -385,6 +407,11 @@ p:not(:first-child):not(.special) {
 
 .foobar-iS.bar-iS, .foobar-iS.foo-iS {
   color: blue;
+}
+
+body#awesome {
+  -webkit-order: 1;
+          order: 1;
 }
 
 /* matches pseudo class */
@@ -482,11 +509,15 @@ article h1 + p, article h2 + p, article h3 + p {
 
 /* postcss-nesting */
 
-a, b {
+a,
+b {
   color: red;
 }
 
-a c, b c, a d, b d {
+a c,
+  b c,
+  a d,
+  b d {
     color: white;
   }
 
@@ -603,12 +634,8 @@ h1 {
 
 .image-set {
   background-image: url(img/test.png);
-  background-image: -webkit-image-set(url(img/test.png) 1x,
-                              url(img/test-2x.png) 2x,
-                              url(my-img-print.png) 600dpi);
-  background-image: image-set(url(img/test.png) 1x,
-                              url(img/test-2x.png) 2x,
-                              url(my-img-print.png) 600dpi);
+  background-image: -webkit-image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x, url(my-img-print.png) 600dpi);
+  background-image: image-set(url(img/test.png) 1x, url(img/test-2x.png) 2x, url(my-img-print.png) 600dpi);
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -660,9 +687,16 @@ h1 {
   background-color: currentColor;
   -webkit-filter: opacity(0.125);
           filter: opacity(0.125);
-  transition: background-position 100ms, -webkit-filter 100ms;
-  transition: background-position 100ms, filter 100ms;
-  transition: background-position 100ms, filter 100ms, -webkit-filter 100ms;
+  transition:
+    background-position 100ms,
+    -webkit-filter 100ms;
+  transition:
+    background-position 100ms,
+    filter 100ms;
+  transition:
+    background-position 100ms,
+    filter 100ms,
+    -webkit-filter 100ms;
 }
 
 .test__eleven:checked + .test__ten::before {
@@ -689,9 +723,13 @@ h1 {
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
   color: rgb(255, 255, 255);
-  font: 700 12px Arial, sans-serif; /* stylelint-disable-line declaration-property-value-allowed-list */
+  font:
+    700 12px Arial,
+    sans-serif; /* stylelint-disable-line declaration-property-value-allowed-list */
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
-  transition: background-color 100ms, -webkit-transform 100ms;
+  transition:
+    background-color 100ms,
+    -webkit-transform 100ms;
 }
 
 .test__eleven:checked + .test__ten::after {
@@ -727,9 +765,16 @@ h1 {
   z-index: 1;
   margin: 4px;
   fill: currentColor;
-  transition: fill 100ms, -webkit-transform 100ms;
-  transition: transform 100ms, fill 100ms;
-  transition: transform 100ms, fill 100ms, -webkit-transform 100ms;
+  transition:
+    fill 100ms,
+    -webkit-transform 100ms;
+  transition:
+    transform 100ms,
+    fill 100ms;
+  transition:
+    transform 100ms,
+    fill 100ms,
+    -webkit-transform 100ms;
 }
 
 .test__eleven:checked + .test__ten > .test__twenty {

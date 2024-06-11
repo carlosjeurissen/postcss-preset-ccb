@@ -90,7 +90,9 @@ function getPluginList (options) {
     fallbackFeatures && require('postcss-media-minmax'), // safe preprocessor (preset-env: 'media-query-ranges')
     upnextFeatures && require('@csstools/postcss-media-queries-aspect-ratio-number-values')({ preserve: preserveOnlyForAdditionalClarity }), // safe preprocessor (preset-env)
     // TODO JS fallbackFeatures && require('css-prefers-color-scheme') // (preset-env: 'prefers-color-scheme-query') (order: run prefers-color-scheme-query here to prevent duplicate transpilation after nesting-rules)
-    fallbackFeatures && require('postcss-nesting'), // safe preprocessor (preset-env)
+    fallbackFeatures && require('postcss-nesting')({
+      edition: '2024-02',
+    }), // safe preprocessor (preset-env)
     (upnextFeatures || upcomingFeatures || fallbackFeatures) && require('postcss-custom-selectors')({ preserve: preserveOnceImplementedAnywhere }), // safe preprocessor (preset-env) (future-revisit: 2022-06-20), (order: run custom-selectors after nesting-rules to correctly transpile &:--custom-selector)
 
     fallbackFeatures && require('postcss-pseudo-class-any-link')({ preserve: preserveUnlessMinify }), // safe preprocessor (preset-env: 'any-link-pseudo-class')

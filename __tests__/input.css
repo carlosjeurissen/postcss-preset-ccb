@@ -352,6 +352,16 @@ b {
   }
 }
 
+button > a,
+article ~ a {
+  color: red;
+
+  & > div,
+  & + span {
+    color: white;
+  }
+}
+
 /* postcss-media-minmax */
 @media screen and (500px <= width <= 1200px) {
   .bar {

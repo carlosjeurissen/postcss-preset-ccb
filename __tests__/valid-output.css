@@ -164,13 +164,11 @@ h1 {
 
 .foo {
   --redundant-border: hsla(var(--primary-color), 0.5);
-  border: 1px solid hsla(var(--primary-color), 0.5);
   border: 1px solid var(--redundant-border);
 }
 
 .bar {
   --redundant-box-shadow: rgb(var(--secondary-color));
-  box-shadow: inset 1px 1px 4px rgb(var(--secondary-color));
   box-shadow: inset 1px 1px 4px var(--redundant-box-shadow);
 }
 
@@ -337,8 +335,13 @@ p {
 }
 
 .color-lab-outside-srgb {
-  color: rgb(194, 0, 49);
-  color: color(display-p3 0.71499 0 0.19398);
+  color: rgb(189, 0, 53);
+}
+
+@media (color-gamut: p3) {
+.color-lab-outside-srgb {
+  color: color(display-p3 0.71057 0 0.19794);
+}
 }
 
 @media (color-gamut: rec2020) {
@@ -514,10 +517,16 @@ b {
   color: red;
 }
 
-a c,
-  b c,
-  a d,
-  b d {
+a c,b c,a d,b d {
+    color: white;
+  }
+
+button > a,
+article ~ a {
+  color: red;
+}
+
+button > a > div,article ~ a > div,button > a + span,article ~ a + span {
     color: white;
   }
 

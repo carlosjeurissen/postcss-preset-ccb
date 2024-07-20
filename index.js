@@ -57,6 +57,8 @@ function getPluginList (options) {
     text-decoration: underline;
 
     autoprefixer should not prefix the above
+
+    color:hwb(200 0% 0%/.5) should be replaced with color:hwb(200 0 0/.5) when minified?
   */
 
   /* maybe, low priority

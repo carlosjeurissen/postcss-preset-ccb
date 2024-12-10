@@ -14,9 +14,5 @@ node_modules
 *.sublime-workspace
 *.sublime-project
 
-# Mac and windows files
-.DS_Store
-.tmp
-
 # Actual test output
 /__tests__/actual-*

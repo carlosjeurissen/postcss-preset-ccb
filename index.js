@@ -2,7 +2,7 @@
 
 /* eslint-disable
   unicorn/prefer-module,
-  no-autofix/strict,
+  disable-autofix/strict,
   global-require,
 */
 

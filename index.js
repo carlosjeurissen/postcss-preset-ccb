@@ -1,12 +1,18 @@
 #!/usr/bin/env node
 
 /* eslint-disable
+  @typescript-eslint/no-require-imports,
   unicorn/prefer-module,
   disable-autofix/strict,
   global-require,
 */
 
 'use strict';
+
+function getPurgeCSSPlugin () {
+  const plugin = require('@fullhuman/postcss-purgecss');
+  return plugin.purgeCSSPlugin || plugin.default || plugin;
+}
 
 function getPluginList (options) {
   const fallbackFeatures = options.fallback !== false;
@@ -30,13 +36,13 @@ function getPluginList (options) {
     sourceDir = sourceDir.slice(0, -1);
   }
 
-  let purgeCssWhitelist = options.purge;
-  const purgeCss = Boolean(purgeCssWhitelist);
+  let purgeCssKeeplist = options.purge;
+  const purgeCss = Boolean(purgeCssKeeplist);
   if (purgeCss) {
-    if (!Array.isArray(purgeCssWhitelist)) {
-      purgeCssWhitelist = [];
+    if (!Array.isArray(purgeCssKeeplist)) {
+      purgeCssKeeplist = [];
     }
-    purgeCssWhitelist.push(
+    purgeCssKeeplist.push(
       /^class$/,
       /^dir$/,
       /^disabled$/,
@@ -186,14 +192,14 @@ function getPluginList (options) {
       ],
     }),
 
-    minifyCss && purgeCss && require('@fullhuman/postcss-purgecss')({
+    minifyCss && purgeCss && getPurgeCSSPlugin()({
       content: [
         sourceDir + '/**/*.js',
         sourceDir + '/**/*.html',
       ],
       rejected: true,
       safelist: {
-        deep: purgeCssWhitelist,
+        deep: purgeCssKeeplist,
       },
 
       extractors: [

@@ -1,6 +1,6 @@
 {
   "name": "postcss-preset-ccb",
-  "version": "0.18.1",
+  "version": "0.18.4",
   "description": "Collection of postcss plugins for improved compatibility and handling of future syntaxes.",
   "keywords": [],
   "homepage": "https://github.com/carlosjeurissen/postcss-preset-ccb#readme",
